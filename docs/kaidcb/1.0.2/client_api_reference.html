@@ -1,0 +1,3658 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://localhost/assets/automation/client-lib/api_documentation.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Client API Reference, v1.0.2</title>
+
+    <link rel="stylesheet" type="text/css" href="./client_api_reference_files/css">
+    <style>
+      body {
+        width: 60em;
+        margin: 1em auto;
+        color: #222;
+        font-family: "Ubuntu", sans-serif;
+        padding-bottom: 4em;
+      }
+
+      h1 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa;
+        padding-bottom: 0.5ex;
+      }
+
+      h2 {
+        border-bottom: 1px solid #aaa;
+        padding-bottom: 0.5ex;
+        margin: 1.5em 0;
+      }
+
+      h3 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa;
+        padding-bottom: 0.5ex;
+      }
+
+      a {
+        text-decoration: none;
+        color: #567e25;
+      }
+
+      table {
+        width: 100%;
+        font-size: 80%;
+        border-collapse: collapse;
+      }
+
+      thead {
+        font-weight: 700;
+        background-color: #dcdcdc;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #fbfbfb;
+      }
+
+      td {
+        border: 1px solid #ccc;
+        padding: 0.5ex 2ex;
+      }
+
+      td p {
+        text-indent: 1em;
+        margin: 0;
+      }
+
+      td p:nth-child(1) {
+        text-indent: 0;
+      }
+
+
+      .field-table td:nth-child(1) {
+        width: 10em;
+      }
+      .field-table td:nth-child(2) {
+        width: 10em;
+      }
+      .field-table td:nth-child(3) {
+        width: 6em;
+      }
+      .field-table td:nth-child(4) {
+        width: auto;
+      }
+
+
+      .extension-table td:nth-child(1) {
+        width: 10em;
+      }
+      .extension-table td:nth-child(2) {
+        width: 10em;
+      }
+      .extension-table td:nth-child(3) {
+        width: 10em;
+      }
+      .extension-table td:nth-child(4) {
+        width: 5em;
+      }
+      .extension-table td:nth-child(5) {
+        width: auto;
+      }
+
+
+      .enum-table td:nth-child(1) {
+        width: 10em;
+      }
+      .enum-table td:nth-child(2) {
+        width: 10em;
+      }
+      .enum-table td:nth-child(3) {
+        width: auto;
+      }
+
+
+      .scalar-value-types-table tr {
+        height: 3em;
+      }
+
+
+      #toc-container ul {
+        list-style-type: none;
+        padding-left: 1em;
+        line-height: 180%;
+        margin: 0;
+      }
+      #toc > li > a {
+        font-weight: bold;
+      }
+
+
+      .file-heading {
+        width: 100%;
+        display: table;
+        border-bottom: 1px solid #aaa;
+        margin: 4em 0 1.5em 0;
+      }
+      .file-heading h2 {
+        border: none;
+        display: table-cell;
+      }
+      .file-heading a {
+        text-align: right;
+        display: table-cell;
+      }
+
+
+      .badge {
+        width: 1.6em;
+        height: 1.6em;
+        display: inline-block;
+
+        line-height: 1.6em;
+        text-align: center;
+        font-weight: bold;
+        font-size: 60%;
+
+        color: #89ba48;
+        background-color: #dff0c8;
+
+        margin: 0.5ex 1em 0.5ex -1em;
+        border: 1px solid #fbfbfb;
+        border-radius: 1ex;
+      }
+    </style>
+
+
+    <link rel="stylesheet" type="text/css" href="https://localhost/assets/automation/client-lib/stylesheet.css">
+  </head>
+
+  <body>
+
+    <h1 id="title">Client API Reference, v1.0.2</h1>
+
+    <h2>Table of Contents</h2>
+
+    <div id="toc-container">
+      <ul id="toc">
+
+
+
+                  <li>
+            <a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.proto">dse.proto</a>
+            <ul>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.AbortTrialRequest"><span class="badge">M</span>AbortTrialRequest</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.AbortTrialResponse"><span class="badge">M</span>AbortTrialResponse</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.CollectiveImplementations"><span class="badge">M</span>CollectiveImplementations</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.CreateBindingRequest"><span class="badge">M</span>CreateBindingRequest</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.CreateBindingResponse"><span class="badge">M</span>CreateBindingResponse</a>
+                </li>
+
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.GetDiagnosticFileRequest"><span class="badge">M</span>GetDiagnosticFileRequest</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.GetDiagnosticFileResponse"><span class="badge">M</span>GetDiagnosticFileResponse</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.ListTrialReportsRequest"><span class="badge">M</span>ListTrialReportsRequest</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.ListTrialReportsResponse"><span class="badge">M</span>ListTrialReportsResponse</a>
+                </li>
+
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.RunLogs"><span class="badge">M</span>RunLogs</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.SetTagsRequest"><span class="badge">M</span>SetTagsRequest</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.Trial"><span class="badge">M</span>Trial</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.TrialMeta"><span class="badge">M</span>TrialMeta</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.TrialReport"><span class="badge">M</span>TrialReport</a>
+                </li>
+
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.WorkspaceSpec"><span class="badge">M</span>WorkspaceSpec</a>
+                </li>
+
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.AbortState"><span class="badge">E</span>AbortState</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.SeverityLevel"><span class="badge">E</span>SeverityLevel</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.TrialState"><span class="badge">E</span>TrialState</a>
+                </li>
+
+
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.DseService"><span class="badge">S</span>DseService</a>
+                </li>
+
+            </ul>
+          </li>
+
+
+          <li>
+            <a href="https://localhost/assets/automation/client-lib/api_documentation.html#app_common.proto">app_common.proto</a>
+            <ul>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#app_common.TrialArtifacts"><span class="badge">M</span>TrialArtifacts</a>
+                </li>
+
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#app_common.ArtifactType"><span class="badge">E</span>ArtifactType</a>
+                </li>
+
+
+
+            </ul>
+          </li>
+
+
+          <li>
+            <a href="https://localhost/assets/automation/client-lib/api_documentation.html#bind.proto">bind.proto</a>
+            <ul>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#bind.Binding"><span class="badge">M</span>Binding</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#bind.CustomBinding"><span class="badge">M</span>CustomBinding</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#bind.InfraRef"><span class="badge">M</span>InfraRef</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#bind.InfraRegion"><span class="badge">M</span>InfraRegion</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#bind.NicBinding"><span class="badge">M</span>NicBinding</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#bind.PhysicalBinding"><span class="badge">M</span>PhysicalBinding</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#bind.PlatformRegion"><span class="badge">M</span>PlatformRegion</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#bind.RankBinding"><span class="badge">M</span>RankBinding</a>
+                </li>
+
+
+
+
+            </ul>
+          </li>
+
+
+
+          <li>
+            <a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.proto">common.proto</a>
+            <ul>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.Algorithm"><span class="badge">M</span>Algorithm</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.ChassisInfo"><span class="badge">M</span>ChassisInfo</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.CollectiveImplementation"><span class="badge">M</span>CollectiveImplementation</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.CongestionControl"><span class="badge">M</span>CongestionControl</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.DCQCNRateControl"><span class="badge">M</span>DCQCNRateControl</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.ExplicitCongestionNotifications"><span class="badge">M</span>ExplicitCongestionNotifications</a>
+                </li>
+
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.Ipv4Addressing"><span class="badge">M</span>Ipv4Addressing</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.Ipv6Addressing"><span class="badge">M</span>Ipv6Addressing</a>
+                </li>
+
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.Layer1"><span class="badge">M</span>Layer1</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.NcclConfig"><span class="badge">M</span>NcclConfig</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.NcclConfig.CustomEnvVarsEntry"><span class="badge">M</span>NcclConfig.CustomEnvVarsEntry</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.NicSettings"><span class="badge">M</span>NicSettings</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.PriorityFlowControl"><span class="badge">M</span>PriorityFlowControl</a>
+                </li>
+
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.Rocev2Transport"><span class="badge">M</span>Rocev2Transport</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.Rocev2TransportSettings"><span class="badge">M</span>Rocev2TransportSettings</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.ServerInfo"><span class="badge">M</span>ServerInfo</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.TcpTransport"><span class="badge">M</span>TcpTransport</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.Vlan"><span class="badge">M</span>Vlan</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.VlanTag"><span class="badge">M</span>VlanTag</a>
+                </li>
+
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.AlgorithmType"><span class="badge">E</span>AlgorithmType</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.EcnBits"><span class="badge">E</span>EcnBits</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.PlatformType"><span class="badge">E</span>PlatformType</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.RDMAVerb"><span class="badge">E</span>RDMAVerb</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.RoCEv2QPNegotiationMethod"><span class="badge">E</span>RoCEv2QPNegotiationMethod</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.RoCEv2RNRTimeout"><span class="badge">E</span>RoCEv2RNRTimeout</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.SpeedMode"><span class="badge">E</span>SpeedMode</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.SpeedType"><span class="badge">E</span>SpeedType</a>
+                </li>
+
+
+
+            </ul>
+          </li>
+
+
+          <li>
+            <a href="https://localhost/assets/automation/client-lib/api_documentation.html#kccb.proto">kccb.proto</a>
+            <ul>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#kccb.Benchmark"><span class="badge">M</span>Benchmark</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#kccb.Config"><span class="badge">M</span>Config</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#kccb.Datasize"><span class="badge">M</span>Datasize</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#kccb.DatasizeList"><span class="badge">M</span>DatasizeList</a>
+                </li>
+
+
+
+
+            </ul>
+          </li>
+
+
+          <li>
+            <a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse_infra.proto">dse_infra.proto</a>
+            <ul>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse_infra.BlackboxFabric"><span class="badge">M</span>BlackboxFabric</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse_infra.Fabric"><span class="badge">M</span>Fabric</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse_infra.GenericHost"><span class="badge">M</span>GenericHost</a>
+                </li>
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse_infra.Host"><span class="badge">M</span>Host</a>
+                </li>
+
+
+                <li>
+                  <a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse_infra.Infrastructure"><span class="badge">M</span>Infrastructure</a>
+                </li>
+
+
+
+
+
+            </ul>
+          </li>
+
+        <li><a href="https://localhost/assets/automation/client-lib/api_documentation.html#scalar-value-types">Scalar Value Types</a></li>
+      </ul>
+    </div>
+
+
+
+      <div class="file-heading">
+        <h2 id="app_common.proto">app_common.proto</h2><a href="https://localhost/assets/automation/client-lib/api_documentation.html#title">Top</a>
+      </div>
+      <p></p>
+
+
+
+
+
+        <h3 id="app_common.TrialArtifacts">TrialArtifacts</h3>
+        <p>List of artifacts produced by a single trial run and saved to user configured storage.</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>configuration_files</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>A list containing the trial configuration in yaml format</p></td>
+                </tr>
+
+                <tr>
+                  <td>summary_data_files</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Trial summary statistics</p></td>
+                </tr>
+
+                <tr>
+                  <td>port_metrics_data_files</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Trial port metrics</p></td>
+                </tr>
+
+
+                <tr>
+                  <td>error_msg_files</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Trial error log</p></td>
+                </tr>
+
+                <tr>
+                  <td>flow_metrics_data_files</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Trial flow metrics</p></td>
+                </tr>
+
+                <tr>
+                  <td>data_chunk_data_files</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Trial data chunk transfer metrics</p></td>
+                </tr>
+
+
+            </tbody>
+          </table>
+
+
+
+
+
+
+
+        <h3 id="app_common.ArtifactType">ArtifactType</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+
+              <tr>
+                <td>ART_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>Unspecified</p></td>
+              </tr>
+
+              <tr>
+                <td>ART_CONFIGURATION</td>
+                <td>1</td>
+                <td><p>Configuration artifact</p></td>
+              </tr>
+
+              <tr>
+                <td>ART_SUMMARY_DATA</td>
+                <td>2</td>
+                <td><p>Summary metrics artifact</p></td>
+              </tr>
+
+              <tr>
+                <td>ART_PORT_METRICS_DATA</td>
+                <td>5</td>
+                <td><p>Port metrics artifact</p></td>
+              </tr>
+
+              <tr>
+                <td>ART_ERROR_MSG</td>
+                <td>9</td>
+                <td><p>Trial error log artifact</p></td>
+              </tr>
+
+              <tr>
+                <td>ART_DATA_CHUNK_DATA</td>
+                <td>10</td>
+                <td><p>Data chunk transfer metrics artifact</p></td>
+              </tr>
+
+              <tr>
+                <td>ART_FLOW_METRICS_DATA</td>
+                <td>11</td>
+                <td><p>Flow metrics artifact</p></td>
+              </tr>
+
+          </tbody>
+        </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="file-heading">
+        <h2 id="dse.proto">dse.proto</h2><a href="https://localhost/assets/automation/client-lib/api_documentation.html#title">Top</a>
+      </div>
+      <p>dse.proto</p><p>A data model and APIs for describing an Keysight AI Data Center Builder trial and operations.</p>
+
+
+        <h3 id="dse.AbortTrialRequest">AbortTrialRequest</h3>
+        <p>Input for AbortTrial API</p>
+
+
+
+
+
+        <h3 id="dse.AbortTrialResponse">AbortTrialResponse</h3>
+        <p>Contains information about a trial abort</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>state</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.AbortState">AbortState</a></td>
+                  <td></td>
+                  <td><p>State of abort operation </p></td>
+                </tr>
+
+                <tr>
+                  <td>message</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>A message containing relevant information for the abort. </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="dse.CollectiveImplementations">CollectiveImplementations</h3>
+        <p>Wrapper message for gRPC response.</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>collective_implementations</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.CollectiveImplementation">common.CollectiveImplementation</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="dse.CreateBindingRequest">CreateBindingRequest</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>infrastructure_profile</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#profiles.InfraProfile">profiles.InfraProfile</a></td>
+                  <td></td>
+                  <td><p>Infrastructure profile</p></td>
+                </tr>
+
+                <tr>
+                  <td>prev_binding</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#bind.Binding">bind.Binding</a></td>
+                  <td>optional</td>
+                  <td><p>Previous binding (if any), useful for incremental changes to existing bindings </p></td>
+                </tr>
+
+                <tr>
+                  <td>platform_regions</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#bind.PlatformRegion">bind.PlatformRegion</a></td>
+                  <td>repeated</td>
+                  <td><p>Assigns platforms to different regions of the infrastructure.
+Is left empty for current use cases.
+DSE server will raise an error if this is non-empty and feature flag 'onearm' is not being used. </p></td>
+                </tr>
+
+                <tr>
+                  <td>platform</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.PlatformType">common.PlatformType</a></td>
+                  <td></td>
+                  <td><p>Platform Type</p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="dse.CreateBindingResponse">CreateBindingResponse</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>binding</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#bind.Binding">bind.Binding</a></td>
+                  <td></td>
+                  <td><p>Binding</p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+
+
+
+        <h3 id="dse.GetDiagnosticFileRequest">GetDiagnosticFileRequest</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>trial_timestamps</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
+                  <td>repeated</td>
+                  <td><p>Timestamps of trial reports</p></td>
+                </tr>
+
+                <tr>
+                  <td>result_ids</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Result IDs of trail reports</p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="dse.GetDiagnosticFileResponse">GetDiagnosticFileResponse</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>filepath</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td></td>
+                  <td><p>filepath to the archived log files (zip, tar, etc.) </p></td>
+                </tr>
+
+                <tr>
+                  <td>url</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td></td>
+                  <td><p>NA</p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="dse.ListTrialReportsRequest">ListTrialReportsRequest</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>workspace</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td></td>
+                  <td><p>Trial workspace to filter by</p></td>
+                </tr>
+
+                <tr>
+                  <td>tags</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Trial tags to filter by</p></td>
+                </tr>
+
+                <tr>
+                  <td>retrieve_custom_files</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#bool">bool</a></td>
+                  <td></td>
+                  <td><p>Whether to include custom files from the trial report</p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="dse.ListTrialReportsResponse">ListTrialReportsResponse</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>trial_reports</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.TrialReport">TrialReport</a></td>
+                  <td>repeated</td>
+                  <td><p>List of trial reports</p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+
+
+
+
+        <h3 id="dse.RunLogs">RunLogs</h3>
+        <p>Message in a stream of updates returned while running a trial.</p><p>The client can print the log messages returned by each update to have a live indication of progress.</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>log_messages</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td></td>
+                  <td><p>Log output</p></td>
+                </tr>
+
+                <tr>
+                  <td>timestamp</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
+                  <td></td>
+                  <td><p>Log timestamp</p></td>
+                </tr>
+
+                <tr>
+                  <td>severity_level</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.SeverityLevel">SeverityLevel</a></td>
+                  <td></td>
+                  <td><p>Log severity</p></td>
+                </tr>
+
+                <tr>
+                  <td>component_name</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td></td>
+                  <td><p>Log source</p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="dse.SetTagsRequest">SetTagsRequest</h3>
+        <p>Set tags for a workspace or trial.</p><p>Replaces previous set of tags.</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>workspace</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td></td>
+                  <td><p>Workspace of trial report</p></td>
+                </tr>
+
+                <tr>
+                  <td>trial_report</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.TrialReport">TrialReport</a></td>
+                  <td></td>
+                  <td><p>Trial report</p></td>
+                </tr>
+
+                <tr>
+                  <td>tags</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Tags to set to a trial report</p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="dse.Trial">Trial</h3>
+        <p>Trial configuration.</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>workspace</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.WorkspaceSpec">WorkspaceSpec</a></td>
+                  <td></td>
+                  <td><p>The workspace that the trial will be stored under.
+If the workspace does not exist, it will be created. </p></td>
+                </tr>
+
+                <tr>
+                  <td>tags</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>A list of tags associated with this trial. </p></td>
+                </tr>
+
+                <tr>
+                  <td>platform</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.PlatformType">common.PlatformType</a></td>
+                  <td></td>
+                  <td><p>Platform for infrastructure involved in the trial</p></td>
+                </tr>
+
+                <tr>
+                  <td>nccl_config</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.NcclConfig">common.NcclConfig</a></td>
+                  <td></td>
+                  <td><p>Configuration settings specific to nccl-tests trials </p></td>
+                </tr>
+
+
+                <tr>
+                  <td>rocev2</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.Rocev2Transport">common.Rocev2Transport</a></td>
+                  <td></td>
+                  <td><p>RoCEv2 transport settings</p></td>
+                </tr>
+
+
+                <tr>
+                  <td>kccb</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#kccb.Config">kccb.Config</a></td>
+                  <td></td>
+                  <td><p>Keysight Collective Communications Application</p></td>
+                </tr>
+
+
+                <tr>
+                  <td>binding</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#bind.Binding">bind.Binding</a></td>
+                  <td>optional</td>
+                  <td><p>Bindings of logical infrastructure to physical resources, typically obtained from CreateBinding() </p></td>
+                </tr>
+
+                <tr>
+                  <td>trial_meta</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.TrialMeta">TrialMeta</a></td>
+                  <td></td>
+                  <td><p>Trial metadata, like version info</p></td>
+                </tr>
+
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="dse.TrialMeta">TrialMeta</h3>
+        <p>Holds the model version.</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>model_version</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td></td>
+                  <td><p>API data model version</p></td>
+                </tr>
+
+                <tr>
+                  <td>is_readonly</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#bool">bool</a></td>
+                  <td></td>
+                  <td><p>Marks whether a trial configuration is read only or can be run</p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="dse.TrialReport">TrialReport</h3>
+        <p>Contains information about a trial that has run, is running, or has yet to be started.</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>timestamp</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
+                  <td></td>
+                  <td><p>The timestamp signifies the time at which a trial run was started.</p></td>
+                </tr>
+
+                <tr>
+                  <td>workspace</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td></td>
+                  <td><p>Workspace name </p></td>
+                </tr>
+
+                <tr>
+                  <td>path</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td></td>
+                  <td><p>The storage path of the trial directory. </p></td>
+                </tr>
+
+                <tr>
+                  <td>tags</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>User provided tags associated with the trial. </p></td>
+                </tr>
+
+                <tr>
+                  <td>description</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td></td>
+                  <td><p>Trial description</p></td>
+                </tr>
+
+                <tr>
+                  <td>state</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.TrialState">TrialState</a></td>
+                  <td></td>
+                  <td><p>Stores the current state of the trial. </p></td>
+                </tr>
+
+                <tr>
+                  <td>system_tags</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>System provided tags associated with the trial.</p></td>
+                </tr>
+
+                <tr>
+                  <td>end_timestamp</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
+                  <td></td>
+                  <td><p>The timestamp signifies the time at which a trial run completed</p></td>
+                </tr>
+
+                <tr>
+                  <td>kccb_summary</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#app_common.SummaryTable">app_common.SummaryTable</a></td>
+                  <td></td>
+                  <td><p>Trial summary statistics </p></td>
+                </tr>
+
+
+                <tr>
+                  <td>kccb_artifacts</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#app_common.TrialArtifacts">app_common.TrialArtifacts</a></td>
+                  <td></td>
+                  <td><p>A collection of artifacts generated by the trial that are saved in storage. </p></td>
+                </tr>
+
+
+            </tbody>
+          </table>
+
+
+
+
+
+
+
+
+
+        <h3 id="dse.WorkspaceSpec">WorkspaceSpec</h3>
+        <p>Describes a workspace to be created/updated.</p><p>If the workspace already exists, the list of tags will be appended to that workspace if they are not already attached to that workspace.</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>name</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td></td>
+                  <td><p>Workspace name</p></td>
+                </tr>
+
+                <tr>
+                  <td>tags</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Tags</p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+
+
+        <h3 id="dse.AbortState">AbortState</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+
+              <tr>
+                <td>ABORT_UNDEFINED</td>
+                <td>0</td>
+                <td><p>State Unspecified</p></td>
+              </tr>
+
+              <tr>
+                <td>ABORT_INITIATED</td>
+                <td>1</td>
+                <td><p>Abort initiated</p></td>
+              </tr>
+
+              <tr>
+                <td>ABORT_ERROR</td>
+                <td>2</td>
+                <td><p>Abort errored</p></td>
+              </tr>
+
+          </tbody>
+        </table>
+
+        <h3 id="dse.SeverityLevel">SeverityLevel</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+
+              <tr>
+                <td>LEVEL_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>LEVEL_DEBUG</td>
+                <td>1</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>LEVEL_INFO</td>
+                <td>2</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>LEVEL_WARNING</td>
+                <td>3</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>LEVEL_ERROR</td>
+                <td>4</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>LEVEL_CRITICAL</td>
+                <td>5</td>
+                <td><p></p></td>
+              </tr>
+
+          </tbody>
+        </table>
+
+        <h3 id="dse.TrialState">TrialState</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+
+              <tr>
+                <td>UNSPECIFIED</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>UNCONFIGURED</td>
+                <td>1</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>CONFIGURATION_IN_PROGRESS</td>
+                <td>2</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>CONFIGURATION_SUCCESSFUL</td>
+                <td>3</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>RUN_IN_PROGRESS</td>
+                <td>4</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>RUN_SUCCESSFUL</td>
+                <td>5</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>ERROR</td>
+                <td>6</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>ABORTED</td>
+                <td>7</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TERMINATED</td>
+                <td>8</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>ABORT_IN_PROGRESS</td>
+                <td>9</td>
+                <td><p></p></td>
+              </tr>
+
+          </tbody>
+        </table>
+
+
+
+
+
+        <h3 id="dse.DseService">DseService</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+
+              <tr>
+                <td>CreateBinding</td>
+                <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.CreateBindingRequest">CreateBindingRequest</a></td>
+                <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.CreateBindingResponse">CreateBindingResponse</a></td>
+                <td><p>create rank and physical bindings for use with a Trial object in ConfigureTrial/RunTrial</p></td>
+              </tr>
+
+              <tr>
+                <td>ConfigureTrial</td>
+                <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.Trial">Trial</a></td>
+                <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.RunLogs">RunLogs</a> stream</td>
+                <td><p>ConfigureTrial sets up the trial based on the parameters provided.
+If the low-level config is not included, the server will use the high-level
+spec to generate the corresponding low-level config, which is returned as
+part of the response.</p></td>
+              </tr>
+
+              <tr>
+                <td>AbortTrial</td>
+                <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.AbortTrialRequest">AbortTrialRequest</a></td>
+                <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.AbortTrialResponse">AbortTrialResponse</a></td>
+                <td><p>Aborts the currently running trial and receive the trial report aborted.
+Returns an error if no Trial has been configured</p></td>
+              </tr>
+
+              <tr>
+                <td>RunTrial</td>
+                <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#google.protobuf.Empty">.google.protobuf.Empty</a></td>
+                <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.RunLogs">RunLogs</a> stream</td>
+                <td><p>Run the currently configured trial and receive streaming updates.
+Returns an error if no Trial has been configured</p></td>
+              </tr>
+
+              <tr>
+                <td>GetTrial</td>
+                <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#google.protobuf.Empty">.google.protobuf.Empty</a></td>
+                <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.Trial">Trial</a></td>
+                <td><p>Returns the trial that is currently configured.
+If no trial is currently configured, the returned object will be uninitialized.</p></td>
+              </tr>
+
+              <tr>
+                <td>GetTrialReport</td>
+                <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#google.protobuf.Empty">.google.protobuf.Empty</a></td>
+                <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.TrialReport">TrialReport</a></td>
+                <td><p>TrialReport contains state information (not started, in progress, successful, error)
+
+Pattern is modeled after this: https://cloud.google.com/apis/design/design_patterns#long_running_operations
+although it does not match completely.</p></td>
+              </tr>
+
+              <tr>
+                <td>SetTags</td>
+                <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.SetTagsRequest">SetTagsRequest</a></td>
+                <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#google.protobuf.Empty">.google.protobuf.Empty</a></td>
+                <td><p>Set tags for a workspace or trial.
+Replaces previous set of tags.</p></td>
+              </tr>
+
+              <tr>
+                <td>GetCollectiveImplementations</td>
+                <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#google.protobuf.Empty">.google.protobuf.Empty</a></td>
+                <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.CollectiveImplementations">CollectiveImplementations</a></td>
+                <td><p>Returns a list of all (CC operation, algorithmic implementation) pairs available on the DSE server.</p></td>
+              </tr>
+
+              <tr>
+                <td>ListTrialReports</td>
+                <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.ListTrialReportsRequest">ListTrialReportsRequest</a></td>
+                <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.ListTrialReportsResponse">ListTrialReportsResponse</a></td>
+                <td><p>Returns a list of all TrialReports in the server's storage.</p></td>
+              </tr>
+
+              <tr>
+                <td>GetDiagnosticFile</td>
+                <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.GetDiagnosticFileRequest">GetDiagnosticFileRequest</a></td>
+                <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse.GetDiagnosticFileResponse">GetDiagnosticFileResponse</a></td>
+                <td><p></p></td>
+              </tr>
+
+          </tbody>
+        </table>
+
+
+      <div class="file-heading">
+        <h2 id="bind.proto">bind.proto</h2><a href="https://localhost/assets/automation/client-lib/api_documentation.html#title">Top</a>
+      </div>
+      <p>binding.proto</p><p>Data model definitions for binding logical infrastructure elements to ranks, NICs and physical resources.</p>
+
+
+        <h3 id="bind.Binding">Binding</h3>
+        <p>Binds various settings to logical infrastructure elements.</p><p>The type of bound information depends on the type of binding.</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>custom_binding</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#bind.CustomBinding">CustomBinding</a></td>
+                  <td></td>
+                  <td><p>Binding type</p></td>
+                </tr>
+
+                <tr>
+                  <td>infrastructure_profile</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#profiles.InfraProfile">profiles.InfraProfile</a></td>
+                  <td></td>
+                  <td><p>The Binding keeps a copy of the infrastructure profile
+so that Trials can be re-run with the original versions of (potentially modified) profiles.InfraProfile </p></td>
+                </tr>
+
+                <tr>
+                  <td>infrastructure</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#keysight_chakra.infra.Infrastructure">keysight_chakra.infra.Infrastructure</a></td>
+                  <td></td>
+                  <td><p>Low-level Chakra model of the infrastructure matching infrastructure_profile </p></td>
+                </tr>
+
+                <tr>
+                  <td>infra_annotations</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#keysight_chakra.infra.Annotation">keysight_chakra.infra.Annotation</a></td>
+                  <td>repeated</td>
+                  <td><p>Annotations for low-level Chakra infrastructure. </p></td>
+                </tr>
+
+                <tr>
+                  <td>platform_regions</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#bind.PlatformRegion">PlatformRegion</a></td>
+                  <td>repeated</td>
+                  <td><p>Assigns platforms to different regions of the infrastructure. Should be populated by the server and be a copy of the platform_regions sent in CreateBindingRequest. </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="bind.CustomBinding">CustomBinding</h3>
+        <p>Binds:</p><p>- Ranks to Logical NPUs</p><p>- NIC settings to Logical NICs</p><p>- Assigned test resources</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>rank_bindings</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#bind.RankBinding">RankBinding</a></td>
+                  <td>repeated</td>
+                  <td><p>Ranks to Logical NPUs binding</p></td>
+                </tr>
+
+                <tr>
+                  <td>nic_bindings</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#bind.NicBinding">NicBinding</a></td>
+                  <td>repeated</td>
+                  <td><p>NIC settings to Logical NICs binding</p></td>
+                </tr>
+
+                <tr>
+                  <td>physical_bindings</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#bind.PhysicalBinding">PhysicalBinding</a></td>
+                  <td>repeated</td>
+                  <td><p>Assigned test resources binding</p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="bind.InfraRef">InfraRef</h3>
+        <p>Reference to a logical infrastructure element</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>device_instance_name</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td></td>
+                  <td><p>Name of the logical infrastructure device (e.g. the value dse_infra.GenericHost.name was set to) </p></td>
+                </tr>
+
+                <tr>
+                  <td>device_index</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td></td>
+                  <td><p>0-based device index </p></td>
+                </tr>
+
+                <tr>
+                  <td>component_name</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td></td>
+                  <td><p>Name of the logical infrastructure component </p></td>
+                </tr>
+
+                <tr>
+                  <td>component_index</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td></td>
+                  <td><p>0-based component index </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="bind.InfraRegion">InfraRegion</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>boundary_refs</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#bind.InfraRef">InfraRef</a></td>
+                  <td>repeated</td>
+                  <td><p>These components mark the boundary of a region within the infrastructure. </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="bind.NicBinding">NicBinding</h3>
+        <p>Logical NIC Settings</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>infra_ref</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#bind.InfraRef">InfraRef</a></td>
+                  <td></td>
+                  <td><p>Reference to a NIC defined in the Chakra infrastructure </p></td>
+                </tr>
+
+                <tr>
+                  <td>nic_settings</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.NicSettings">common.NicSettings</a></td>
+                  <td></td>
+                  <td><p>Auto-populated, can be overriden by user </p></td>
+                </tr>
+
+                <tr>
+                  <td>associated_physical_bindings</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#bind.InfraRef">InfraRef</a></td>
+                  <td>repeated</td>
+                  <td><p>Test ports which will may flows from corresponding NIC reference</p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="bind.PhysicalBinding">PhysicalBinding</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>infra_ref</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#bind.InfraRef">InfraRef</a></td>
+                  <td></td>
+                  <td><p>Reference to the logical infrastructure element that the physical resource represents </p></td>
+                </tr>
+
+                <tr>
+                  <td>platform</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.PlatformType">common.PlatformType</a></td>
+                  <td></td>
+                  <td><p>Platform type</p></td>
+                </tr>
+
+                <tr>
+                  <td>chassis_location</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.ChassisInfo">common.ChassisInfo</a></td>
+                  <td></td>
+                  <td><p>Platform location, if Keysight Hardware platforms </p></td>
+                </tr>
+
+                <tr>
+                  <td>server_location</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.ServerInfo">common.ServerInfo</a></td>
+                  <td></td>
+                  <td><p>Platform location, if  NCCL-tests or Keysight Software platforms </p></td>
+                </tr>
+
+                <tr>
+                  <td>layer1</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.Layer1">common.Layer1</a></td>
+                  <td></td>
+                  <td><p>Layer 1 settings of the test port</p></td>
+                </tr>
+
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="bind.PlatformRegion">PlatformRegion</h3>
+        <p>Assigns a platform to a region in the infrastructure. Currently for internal use only.</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>region</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#bind.InfraRegion">InfraRegion</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>platform</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.PlatformType">common.PlatformType</a></td>
+                  <td>optional</td>
+                  <td><p> </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="bind.RankBinding">RankBinding</h3>
+        <p>Assign Ranks to Logical NPUs</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>infra_ref</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#bind.InfraRef">InfraRef</a></td>
+                  <td></td>
+                  <td><p>Reference to NPU used by this rank </p></td>
+                </tr>
+
+                <tr>
+                  <td>rank_id</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td></td>
+                  <td><p>Rank ID</p></td>
+                </tr>
+
+                <tr>
+                  <td>nic_refs</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#bind.InfraRef">InfraRef</a></td>
+                  <td>repeated</td>
+                  <td><p>List of NICs available to NPU (in the same host) </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+      <div class="file-heading">
+        <h2 id="common.proto">common.proto</h2><a href="https://localhost/assets/automation/client-lib/api_documentation.html#title">Top</a>
+      </div>
+      <p>common.proto</p><p>Common data models</p>
+
+
+        <h3 id="common.Algorithm">Algorithm</h3>
+        <p>Algorithm message specifies a choice of system provided Expanders or a user provided custom implementation</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>system</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.AlgorithmType">AlgorithmType</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>custom</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="common.ChassisInfo">ChassisInfo</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>address</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td></td>
+                  <td><p>Chassis IP Address or FQDN </p></td>
+                </tr>
+
+                <tr>
+                  <td>port</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td></td>
+                  <td><p>Chassis port. Formats &lt;front-panel-port&gt; or &lt;front-panel-port&gt;.&lt;fanout&gt;. Examples: '1' or '1.4' </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="common.CollectiveImplementation">CollectiveImplementation</h3>
+        <p>Used to specify a (collective type, collective algorithm) pair.</p><p>The collective algorithm determines how a collective communication operation is expanded into</p><p>a set of peer-to-peer operations.</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>type</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#keysight_chakra.mlcommons.CollectiveCommType">keysight_chakra.mlcommons.CollectiveCommType</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>algorithm</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.Algorithm">Algorithm</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="common.CongestionControl">CongestionControl</h3>
+        <p>Congestion control mechanisms</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>ecn</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.ExplicitCongestionNotifications">ExplicitCongestionNotifications</a></td>
+                  <td></td>
+                  <td><p>ECN configuration </p></td>
+                </tr>
+
+                <tr>
+                  <td>pfc</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.PriorityFlowControl">PriorityFlowControl</a></td>
+                  <td></td>
+                  <td><p>PFC configuration </p></td>
+                </tr>
+
+                <tr>
+                  <td>dcqcn_rate_control</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.DCQCNRateControl">DCQCNRateControl</a></td>
+                  <td></td>
+                  <td><p>DCQCN rate control configuration </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="common.DCQCNRateControl">DCQCNRateControl</h3>
+        <p>Data Center Quantized Congestion Notification rate control settings</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>enabled</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#bool">bool</a></td>
+                  <td>optional</td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>alpha_factor</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td>optional</td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>alpha_interval</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>initial_alpha</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>rate_after_first_cnp</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>rate_decrement_factor</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#float">float</a></td>
+                  <td>optional</td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>min_rate_limit</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>rate_decrement_coefficient</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>rate_decrement_interval</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>clamp_target_rate</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#bool">bool</a></td>
+                  <td>optional</td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>rate_increment_interval</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>rate_increment_byte_counter</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>rate_increment_threshold</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>additive_rate_increment</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>hyper_rate_increment</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>time_between_cnps</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="common.ExplicitCongestionNotifications">ExplicitCongestionNotifications</h3>
+        <p>ECN configuration</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>cnp_dscp</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td>optional</td>
+                  <td><p>DSCP of CNP packets </p></td>
+                </tr>
+
+                <tr>
+                  <td>data_ecn_bits</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.EcnBits">EcnBits</a></td>
+                  <td>optional</td>
+                  <td><p>Configures the ECN bits for data packets </p></td>
+                </tr>
+
+                <tr>
+                  <td>control_ecn_bits</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.EcnBits">EcnBits</a></td>
+                  <td>optional</td>
+                  <td><p>Configures the ECN bits for control packets; eg RoCEv2 ACKs </p></td>
+                </tr>
+
+                <tr>
+                  <td>cnp_ecn_bits</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.EcnBits">EcnBits</a></td>
+                  <td>optional</td>
+                  <td><p>Configures the ECN bits for CNP packets </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+
+
+
+
+
+        <h3 id="common.Ipv4Addressing">Ipv4Addressing</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>ip_address</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td></td>
+                  <td><p>IP address </p></td>
+                </tr>
+
+                <tr>
+                  <td>ip_prefix</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>IP prefix </p></td>
+                </tr>
+
+                <tr>
+                  <td>ip_gateway_address</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td></td>
+                  <td><p>Gateway address </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="common.Ipv6Addressing">Ipv6Addressing</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>ip_address</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td></td>
+                  <td><p>IP address </p></td>
+                </tr>
+
+                <tr>
+                  <td>ip_prefix</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>IP prefix </p></td>
+                </tr>
+
+                <tr>
+                  <td>ip_gateway_address</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td></td>
+                  <td><p>Gateway address</p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+
+
+
+        <h3 id="common.Layer1">Layer1</h3>
+        <p>Layer 1 configuration</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>speed_mode</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.SpeedMode">SpeedMode</a></td>
+                  <td></td>
+                  <td><p>Speed and port mode (speed, modulation, FEC)</p></td>
+                </tr>
+
+                <tr>
+                  <td>auto_negotiate</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#bool">bool</a></td>
+                  <td></td>
+                  <td><p>Auto negotiation</p></td>
+                </tr>
+
+                <tr>
+                  <td>link_training</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#bool">bool</a></td>
+                  <td></td>
+                  <td><p>Link Training</p></td>
+                </tr>
+
+                <tr>
+                  <td>ieee_defaults</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#bool">bool</a></td>
+                  <td></td>
+                  <td><p>IEEE Defaults settings </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="common.NcclConfig">NcclConfig</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>custom_env_vars</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.NcclConfig.CustomEnvVarsEntry">NcclConfig.CustomEnvVarsEntry</a></td>
+                  <td>repeated</td>
+                  <td><p> </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="common.NcclConfig.CustomEnvVarsEntry">NcclConfig.CustomEnvVarsEntry</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>key</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>value</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="common.NicSettings">NicSettings</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>ethernet_mtu</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td></td>
+                  <td><p>Ethernet Maximum transmission unit </p></td>
+                </tr>
+
+                <tr>
+                  <td>ipv4_addressing</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.Ipv4Addressing">Ipv4Addressing</a></td>
+                  <td></td>
+                  <td><p>IP addressing</p></td>
+                </tr>
+
+                <tr>
+                  <td>ipv6_addressing</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.Ipv6Addressing">Ipv6Addressing</a></td>
+                  <td></td>
+                  <td><p>IP addressing </p></td>
+                </tr>
+
+
+                <tr>
+                  <td>congestion_control</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.CongestionControl">CongestionControl</a></td>
+                  <td>optional</td>
+                  <td><p>Congestion control </p></td>
+                </tr>
+
+
+                <tr>
+                  <td>mac_address</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>MAC address</p></td>
+                </tr>
+
+                <tr>
+                  <td>vlan</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.Vlan">Vlan</a></td>
+                  <td>optional</td>
+                  <td><p>VLAN Tags </p></td>
+                </tr>
+
+                <tr>
+                  <td>roce_transport_settings</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.Rocev2TransportSettings">Rocev2TransportSettings</a></td>
+                  <td></td>
+                  <td><p>RoCEv2 transport settings</p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+
+
+
+        <h3 id="common.PriorityFlowControl">PriorityFlowControl</h3>
+        <p>PFC configuration</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>enabled</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#bool">bool</a></td>
+                  <td>optional</td>
+                  <td><p>Enable/disable PFC</p></td>
+                </tr>
+
+                <tr>
+                  <td>priorities</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td>repeated</td>
+                  <td><p>PFC priorities</p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+
+
+
+
+        <h3 id="common.Rocev2Transport">Rocev2Transport</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>rdma_message_size</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td></td>
+                  <td><p>(Maximum) RMDA message size in Bytes </p></td>
+                </tr>
+
+                <tr>
+                  <td>qps_per_rankpair</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td></td>
+                  <td><p>Number of Queue Pairs per rank pair </p></td>
+                </tr>
+
+                <tr>
+                  <td>qp_negotiation</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.RoCEv2QPNegotiationMethod">RoCEv2QPNegotiationMethod</a></td>
+                  <td></td>
+                  <td><p>Queue Pair Negotiation method </p></td>
+                </tr>
+
+                <tr>
+                  <td>verb</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.RDMAVerb">RDMAVerb</a></td>
+                  <td></td>
+                  <td><p>RDMA verb to use for data transfers in collective communication operations </p></td>
+                </tr>
+
+                <tr>
+                  <td>tcp_store_host</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td></td>
+                  <td><p>TCPStore hostname or IP address (only applicable when qp_negotiation is METHOD_TCP_STORE) </p></td>
+                </tr>
+
+                <tr>
+                  <td>tcp_store_port</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>TCPStore port number (only applicable when qp_negotiation is METHOD_TCP_STORE) </p></td>
+                </tr>
+
+                <tr>
+                  <td>retx_retry_interval_ms</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td>optional</td>
+                  <td><p>Configure the AckTimeout for RoCEv2 protoco </p></td>
+                </tr>
+
+                <tr>
+                  <td>retx_retry_count</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td>optional</td>
+                  <td><p>Configure the RetransRetryCount for RoCEv2 protocol </p></td>
+                </tr>
+
+                <tr>
+                  <td>max_retry_on_rnr_nak</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td>optional</td>
+                  <td><p> </p></td>
+                </tr>
+
+                <tr>
+                  <td>ack_request_interval</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td>optional</td>
+                  <td><p> </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="common.Rocev2TransportSettings">Rocev2TransportSettings</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>ack_dscp</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td>optional</td>
+                  <td><p>Configures  ACK DSCP value for RoCEv2 protocol </p></td>
+                </tr>
+
+                <tr>
+                  <td>nack_dscp</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td>optional</td>
+                  <td><p>Configures  NACK DSCP value for RoCEv2 protocol </p></td>
+                </tr>
+
+                <tr>
+                  <td>data_dscp</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td></td>
+                  <td><p>Configures DSCP for all data traffic </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="common.ServerInfo">ServerInfo</h3>
+        <p>Information about servers being used for emulation</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>address</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td></td>
+                  <td><p>Server IP address or FQDN </p></td>
+                </tr>
+
+                <tr>
+                  <td>nic_interface</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td></td>
+                  <td><p>Server NIC interface </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+
+
+
+
+        <h3 id="common.Vlan">Vlan</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>enabled</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#bool">bool</a></td>
+                  <td></td>
+                  <td><p>Enable/disable VLANs</p></td>
+                </tr>
+
+                <tr>
+                  <td>vlan_tags</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.VlanTag">VlanTag</a></td>
+                  <td>repeated</td>
+                  <td><p>VLAN tag. Currently one VLAN tag is required. </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="common.VlanTag">VlanTag</h3>
+        <p>VLAN Configuration</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>priority</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td></td>
+                  <td><p>Priority</p></td>
+                </tr>
+
+                <tr>
+                  <td>vlan_id</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td></td>
+                  <td><p>VLAN ID </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+
+
+        <h3 id="common.AlgorithmType">AlgorithmType</h3>
+        <p>Algorithm message specifies a choice of system provided Expanders or a user provided custom implementation</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+
+              <tr>
+                <td>ALGO_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>ALGO_ALL_TO_ALL_PARALLEL</td>
+                <td>1</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>ALGO_ALL_TO_ALL_PXN</td>
+                <td>2</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>ALGO_ALL_REDUCE_UNIDIRECTIONAL_RING</td>
+                <td>10</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>ALGO_ALL_REDUCE_BIDIRECTIONAL_RING</td>
+                <td>11</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>ALGO_ALL_REDUCE_VECTOR_HALVING_DOUBLING</td>
+                <td>12</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>ALGO_ALL_REDUCE_DOUBLE_BINARY_TREE</td>
+                <td>13</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>ALGO_ALL_GATHER_RING</td>
+                <td>20</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>ALGO_REDUCE_SCATTER_RING</td>
+                <td>30</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>ALGO_BROADCAST_PARALLEL</td>
+                <td>40</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>ALGO_GATHER_PARALLEL</td>
+                <td>50</td>
+                <td><p></p></td>
+              </tr>
+
+          </tbody>
+        </table>
+
+        <h3 id="common.EcnBits">EcnBits</h3>
+        <p>ECN field within an IP packet</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+
+              <tr>
+                <td>ECN_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>Unspecified</p></td>
+              </tr>
+
+              <tr>
+                <td>ECN_DISABLED</td>
+                <td>1</td>
+                <td><p>ECN disabled</p></td>
+              </tr>
+
+              <tr>
+                <td>ECN_ECT1</td>
+                <td>2</td>
+                <td><p>ECN capable</p></td>
+              </tr>
+
+              <tr>
+                <td>ECN_ECT0</td>
+                <td>3</td>
+                <td><p>ECN capable</p></td>
+              </tr>
+
+          </tbody>
+        </table>
+
+        <h3 id="common.PlatformType">PlatformType</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+
+              <tr>
+                <td>PLATFORM_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>UNSPECIFIED</p></td>
+              </tr>
+
+              <tr>
+                <td>PLATFORM_KEYS_NCCL_TEST</td>
+                <td>1</td>
+                <td><p>Keysight Software Solution for NCCL-tests orchestration on on-prem servers</p></td>
+              </tr>
+
+              <tr>
+                <td>PLATFORM_KEYS_SW_AGENT</td>
+                <td>2</td>
+                <td><p>Keysight Software Solution for on-prem servers</p></td>
+              </tr>
+
+              <tr>
+                <td>PLATFORM_KEYS_HW</td>
+                <td>3</td>
+                <td><p>Keysight Hardware Platform</p></td>
+              </tr>
+
+
+          </tbody>
+        </table>
+
+
+        <h3 id="common.RDMAVerb">RDMAVerb</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+
+              <tr>
+                <td>VERB_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>VERB_WRITE</td>
+                <td>1</td>
+                <td><p>RDMA WRITE</p></td>
+              </tr>
+
+              <tr>
+                <td>VERB_SEND</td>
+                <td>2</td>
+                <td><p>RDMA SEND</p></td>
+              </tr>
+
+          </tbody>
+        </table>
+
+
+        <h3 id="common.RoCEv2RNRTimeout">RoCEv2RNRTimeout</h3>
+        <p>RoCEv2 RNR Timeout. Relevant only for RC QPs</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+
+              <tr>
+                <td>TIMEOUT_655360_MU</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_10_MU</td>
+                <td>1</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_20_MU</td>
+                <td>2</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_30_MU</td>
+                <td>3</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_40_MU</td>
+                <td>4</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_60_MU</td>
+                <td>5</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_80_MU</td>
+                <td>6</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_120_MU</td>
+                <td>7</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_160_MU</td>
+                <td>8</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_240_MU</td>
+                <td>9</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_320_MU</td>
+                <td>10</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_480_MU</td>
+                <td>11</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_640_MU</td>
+                <td>12</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_960_MU</td>
+                <td>13</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_1280_MU</td>
+                <td>14</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_1920_MU</td>
+                <td>15</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_2560_MU</td>
+                <td>16</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_3840_MU</td>
+                <td>17</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_5120_MU</td>
+                <td>18</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_7680_MU</td>
+                <td>19</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_10240_MU</td>
+                <td>20</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_15360_MU</td>
+                <td>21</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_20480_MU</td>
+                <td>22</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_30720_MU</td>
+                <td>23</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_40960_MU</td>
+                <td>24</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_61440_MU</td>
+                <td>25</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_81920_MU</td>
+                <td>26</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_122880_MU</td>
+                <td>27</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_163840_MU</td>
+                <td>28</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_245760_MU</td>
+                <td>29</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_327680_MU</td>
+                <td>30</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>TIMEOUT_491520_MU</td>
+                <td>31</td>
+                <td><p></p></td>
+              </tr>
+
+          </tbody>
+        </table>
+
+        <h3 id="common.SpeedMode">SpeedMode</h3>
+        <p>A tuple of speed, modulation and FEC mode configuration</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+
+              <tr>
+                <td>UNSPECIFIED</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>MODE_100GE_NRZ_RS_FEC</td>
+                <td>9</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>MODE_100GE_NRZ_NO_FEC</td>
+                <td>10</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>MODE_100GE_PAM4_53G_KP4_FEC</td>
+                <td>8</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>MODE_100GE_PAM4_106G_RS_FEC</td>
+                <td>7</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>MODE_100GE_PAM4_106G_KP4_FEC</td>
+                <td>6</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>MODE_200GE_PAM4_53G_KP4_FEC</td>
+                <td>5</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>MODE_200GE_PAM4_106G_KP4_FEC</td>
+                <td>4</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>MODE_400GE_PAM4_53G_KP4_FEC</td>
+                <td>3</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>MODE_400GE_PAM4_106G_KP4_FEC</td>
+                <td>2</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>MODE_800GE_PAM4_106G_KP4_FEC</td>
+                <td>1</td>
+                <td><p></p></td>
+              </tr>
+
+          </tbody>
+        </table>
+
+        <h3 id="common.SpeedType">SpeedType</h3>
+        <p></p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+
+              <tr>
+                <td>SPEED_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p></p></td>
+              </tr>
+
+              <tr>
+                <td>SPEED_100G</td>
+                <td>1</td>
+                <td><p>100 Gigabit Ethernet</p></td>
+              </tr>
+
+              <tr>
+                <td>SPEED_200G</td>
+                <td>2</td>
+                <td><p>200 Gigabit Ethernet</p></td>
+              </tr>
+
+              <tr>
+                <td>SPEED_400G</td>
+                <td>3</td>
+                <td><p>400 Gigabit Ethernet</p></td>
+              </tr>
+
+              <tr>
+                <td>SPEED_800G</td>
+                <td>4</td>
+                <td><p>800 Gigabit Ethernet</p></td>
+              </tr>
+
+          </tbody>
+        </table>
+
+
+
+
+
+
+
+      <div class="file-heading">
+        <h2 id="kccb.proto">kccb.proto</h2><a href="https://localhost/assets/automation/client-lib/api_documentation.html#title">Top</a>
+      </div>
+      <p>Data model for describing the Collective Benchmark trial</p>
+
+
+        <h3 id="kccb.Benchmark">Benchmark</h3>
+        <p>Benchmark message is a high level abstraction of a Chakra workload</p><p>The message MUST be converted into a list of Chakra et_def.proto Node messages</p><p>and the dse.Experiment.workload field should be populated with the</p><p>converted list</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>collective_algorithm</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#common.Algorithm">common.Algorithm</a></td>
+                  <td></td>
+                  <td><p>Communication collective algorithm </p></td>
+                </tr>
+
+                <tr>
+                  <td>datasize</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#kccb.Datasize">Datasize</a></td>
+                  <td></td>
+                  <td><p>Data size definition as a factor </p></td>
+                </tr>
+
+                <tr>
+                  <td>datasize_list</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#kccb.DatasizeList">DatasizeList</a></td>
+                  <td></td>
+                  <td><p>Custom data size definition </p></td>
+                </tr>
+
+                <tr>
+                  <td>iterations</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#int32">int32</a></td>
+                  <td></td>
+                  <td><p>Number of repeated benchmark runs </p></td>
+                </tr>
+
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="kccb.Config">Config</h3>
+        <p>Collective Benchmark Application configuration</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>benchmark</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#kccb.Benchmark">Benchmark</a></td>
+                  <td></td>
+                  <td><p>Benchmark definiton</p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="kccb.Datasize">Datasize</h3>
+        <p>Datasize is a container for specifying the data sizes for each Collective benchmark run</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>start</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>Data size to start the benchmark collective operation </p></td>
+                </tr>
+
+                <tr>
+                  <td>step</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>Factor to increase the data size for each run </p></td>
+                </tr>
+
+                <tr>
+                  <td>end</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>maximum data size after which the benchmark completes </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="kccb.DatasizeList">DatasizeList</h3>
+        <p>DatasizeList allows for specifying a custom list of data sizes</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>size_bytes</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#uint64">uint64</a></td>
+                  <td>repeated</td>
+                  <td><p>The size of data in bytes </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="file-heading">
+        <h2 id="dse_infra.proto">dse_infra.proto</h2><a href="https://localhost/assets/automation/client-lib/api_documentation.html#title">Top</a>
+      </div>
+      <p>Data models for logical infrastructure used in the trial</p>
+
+
+        <h3 id="dse_infra.BlackboxFabric">BlackboxFabric</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>name</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Fabric name </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+
+
+
+
+        <h3 id="dse_infra.Fabric">Fabric</h3>
+        <p></p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>blackbox</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse_infra.BlackboxFabric">BlackboxFabric</a></td>
+                  <td></td>
+                  <td><p>Non-detailed generic network fabric (a blackbox) </p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="dse_infra.GenericHost">GenericHost</h3>
+        <p>contains the input parameters for the generic host builder</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>name</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>Host name</p></td>
+                </tr>
+
+                <tr>
+                  <td>npu_count</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>Number of NPUs. Generic hosts have a 1:1 ratio of NICs and NPUs </p></td>
+                </tr>
+
+                <tr>
+                  <td>custom_bandwidth_gbps</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>NPU Interconnect bandwidth</p></td>
+                </tr>
+
+
+            </tbody>
+          </table>
+
+
+
+
+
+        <h3 id="dse_infra.Host">Host</h3>
+        <p>High level definition of hosts in logical infrastructure</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>count</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>Number of hosts</p></td>
+                </tr>
+
+
+                <tr>
+                  <td>generic</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse_infra.GenericHost">GenericHost</a></td>
+                  <td></td>
+                  <td><p>Generic host</p></td>
+                </tr>
+
+
+                <tr>
+                  <td>use_npu_interconnect</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#bool">bool</a></td>
+                  <td></td>
+                  <td><p>Emulate NPU interconnects</p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+
+
+        <h3 id="dse_infra.Infrastructure">Infrastructure</h3>
+        <p>Infrastructure configuration comprising hosts and the network fabric</p>
+
+
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                  <td>host</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse_infra.Host">Host</a></td>
+                  <td></td>
+                  <td><p>Hosts</p></td>
+                </tr>
+
+                <tr>
+                  <td>fabric</td>
+                  <td><a href="https://localhost/assets/automation/client-lib/api_documentation.html#dse_infra.Fabric">Fabric</a></td>
+                  <td>optional</td>
+                  <td><p>Network fabric</p></td>
+                </tr>
+
+            </tbody>
+          </table>
+
+
+
+
+
+
+
+
+
+
+    <h2 id="scalar-value-types">Scalar Value Types</h2>
+    <table class="scalar-value-types-table">
+      <thead>
+        <tr><td>.proto Type</td><td>Notes</td><td>C++</td><td>Java</td><td>Python</td><td>Go</td><td>C#</td><td>PHP</td><td>Ruby</td></tr>
+      </thead>
+      <tbody>
+
+          <tr id="double">
+            <td>double</td>
+            <td></td>
+            <td>double</td>
+            <td>double</td>
+            <td>float</td>
+            <td>float64</td>
+            <td>double</td>
+            <td>float</td>
+            <td>Float</td>
+          </tr>
+
+          <tr id="float">
+            <td>float</td>
+            <td></td>
+            <td>float</td>
+            <td>float</td>
+            <td>float</td>
+            <td>float32</td>
+            <td>float</td>
+            <td>float</td>
+            <td>Float</td>
+          </tr>
+
+          <tr id="int32">
+            <td>int32</td>
+            <td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead.</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>int</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>integer</td>
+            <td>Bignum or Fixnum (as required)</td>
+          </tr>
+
+          <tr id="int64">
+            <td>int64</td>
+            <td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead.</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>int/long</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>integer/string</td>
+            <td>Bignum</td>
+          </tr>
+
+          <tr id="uint32">
+            <td>uint32</td>
+            <td>Uses variable-length encoding.</td>
+            <td>uint32</td>
+            <td>int</td>
+            <td>int/long</td>
+            <td>uint32</td>
+            <td>uint</td>
+            <td>integer</td>
+            <td>Bignum or Fixnum (as required)</td>
+          </tr>
+
+          <tr id="uint64">
+            <td>uint64</td>
+            <td>Uses variable-length encoding.</td>
+            <td>uint64</td>
+            <td>long</td>
+            <td>int/long</td>
+            <td>uint64</td>
+            <td>ulong</td>
+            <td>integer/string</td>
+            <td>Bignum or Fixnum (as required)</td>
+          </tr>
+
+          <tr id="sint32">
+            <td>sint32</td>
+            <td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s.</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>int</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>integer</td>
+            <td>Bignum or Fixnum (as required)</td>
+          </tr>
+
+          <tr id="sint64">
+            <td>sint64</td>
+            <td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s.</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>int/long</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>integer/string</td>
+            <td>Bignum</td>
+          </tr>
+
+          <tr id="fixed32">
+            <td>fixed32</td>
+            <td>Always four bytes. More efficient than uint32 if values are often greater than 2^28.</td>
+            <td>uint32</td>
+            <td>int</td>
+            <td>int</td>
+            <td>uint32</td>
+            <td>uint</td>
+            <td>integer</td>
+            <td>Bignum or Fixnum (as required)</td>
+          </tr>
+
+          <tr id="fixed64">
+            <td>fixed64</td>
+            <td>Always eight bytes. More efficient than uint64 if values are often greater than 2^56.</td>
+            <td>uint64</td>
+            <td>long</td>
+            <td>int/long</td>
+            <td>uint64</td>
+            <td>ulong</td>
+            <td>integer/string</td>
+            <td>Bignum</td>
+          </tr>
+
+          <tr id="sfixed32">
+            <td>sfixed32</td>
+            <td>Always four bytes.</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>int</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>integer</td>
+            <td>Bignum or Fixnum (as required)</td>
+          </tr>
+
+          <tr id="sfixed64">
+            <td>sfixed64</td>
+            <td>Always eight bytes.</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>int/long</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>integer/string</td>
+            <td>Bignum</td>
+          </tr>
+
+          <tr id="bool">
+            <td>bool</td>
+            <td></td>
+            <td>bool</td>
+            <td>boolean</td>
+            <td>boolean</td>
+            <td>bool</td>
+            <td>bool</td>
+            <td>boolean</td>
+            <td>TrueClass/FalseClass</td>
+          </tr>
+
+          <tr id="string">
+            <td>string</td>
+            <td>A string must always contain UTF-8 encoded or 7-bit ASCII text.</td>
+            <td>string</td>
+            <td>String</td>
+            <td>str/unicode</td>
+            <td>string</td>
+            <td>string</td>
+            <td>string</td>
+            <td>String (UTF-8)</td>
+          </tr>
+
+          <tr id="bytes">
+            <td>bytes</td>
+            <td>May contain any arbitrary sequence of bytes.</td>
+            <td>string</td>
+            <td>ByteString</td>
+            <td>str</td>
+            <td>[]byte</td>
+            <td>ByteString</td>
+            <td>string</td>
+            <td>String (ASCII-8BIT)</td>
+          </tr>
+
+      </tbody>
+    </table>
+
+
+
+</body></html>
