@@ -86,6 +86,6 @@ LICENSE_SERVERS="--license_servers server1 server2"
 ```
 
 [support-license-server]: https://support.ixiacom.com/keng-license-server-software-downloads-documentation
-[kai-dcb-datasheet]: https://www.keysight.com/us/en/products/network-test/protocol-load-test/kai-data-center-builder.html
+[kai-dcb-datasheet]: https://www.keysight.com/us/en/assets/3125-1348/data-sheets/Keysight-AI-Data-Center-Builder.pdf
 [deployment-compose]: compose.md
 [deployment-env]: ../aidc/env.latest
