@@ -12,3 +12,4 @@ venv
 *.bkp
 *.out
 downloads/*
+site
