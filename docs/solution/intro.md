@@ -15,11 +15,11 @@ There are two applications currently available:
 
 **KAI Workload Emulation** replays short sequences of steps real AI workloads, like pre- or post-training, go through over the course thousands and millions of iterations called epochs. These workloads form a mix of computational and communication steps, mostly defined by the type of AI model partitioning schemas to distribute the job across hundreds or thousands of GPUs. The Workload Emulation app provides a way to experiment with the performance of the model partitioning choices over various types of network topologies. It helps to find an optimal combination that would minimize the time spend on moving the data and prioritize computations on GPUs, ultimately reducing the Job Completion Time (JCT).
 
-<img src="../../assets/KAI_DC_Builder_Apps.png" alt="KAI DC Builder Apps" width="700px" align="center"/>
+![KAI DC Builder Apps](../assets/KAI_DC_Builder_Apps.png){ width=700 align=center }
 
 The KAI applications can execute a trial run using one of the AI test engines that include:
 
 * **Keysight AresONE Hardware** – high density traffic load appliances with RoCEv2 Traffic Emulation to fairly reproduce realistic AI/ML communication patterns at scale over a fabric under test. RoCEv2 is a transport protocol that enables Remote Direct Memory Access (RDMA) over Ethernet networks and is used by AI cluster nodes for collective communications.
 * **Keysight Endpoint Software** – runs on AI compute nodes with RDMA NICs and GPUs to collect reference datasets and compare benchmarking results.
 
-<img src="../../assets/KAI_DC_Builder_Platforms.png" alt="KAI DC Builder Test Engines" width="700px" align="center"/>
+![KAI DC Builder Test Engines](../assets/KAI_DC_Builder_Platforms.png){ width=700 align=center }
