@@ -1,4 +1,5 @@
 ---
+title: KAI Data Center Builder
 hide:
   - toc
 ---
