@@ -74,7 +74,7 @@ You can also use a command-line session, via console or SSH, to perform license 
 To connect the DSE Controller to the License Server VM(s), provide the location of the license servers to the controller instance during the launch using:
 
 ```
---license-servers=server1 server2
+--license_servers server1 server2
 ```
 
 The argument accepts a space-separated list of hostnames or IP addresses of the License Servers, up to four. The controller will try to connect to the License Servers in the order they are specified in the list. If the first License Server is not available, or doesn't have enough available licenses to run the test, the controller will try to connect to the next one in the list.
