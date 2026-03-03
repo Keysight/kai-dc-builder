@@ -91,12 +91,7 @@ pull-dfe-ubn-n:
 pull: pull-modules
 pull-modules:
 	@echo "Downloading modules for automation into $(STORAGE)/notebooks/modules ..."
-	mkdir -p $(STORAGE)/notebooks/modules
-	cd $(STORAGE)/notebooks/modules \
-	&& curl -kfsSL -O $(DSE_MODELS_URL) \
-	&& curl -kfsSL -O $(DSE_CLIENT_URL) \
-	&& curl -kfsSL -O $(CHAKRA_URL) \
-	&& echo "Download complete."
+	@./bin/pull-modules.sh https://localhost:$(WEBUI) $(STORAGE)/notebooks/modules
 
 ###############################
 # Installation

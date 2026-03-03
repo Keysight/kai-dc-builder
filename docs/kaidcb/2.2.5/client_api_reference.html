@@ -1,0 +1,4880 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Client API Reference, v2.2.5</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700,400italic"/>
+    <style>
+      body {
+        width: 60em;
+        margin: 1em auto;
+        color: #222;
+        font-family: "Ubuntu", sans-serif;
+        padding-bottom: 4em;
+      }
+
+      h1 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa;
+        padding-bottom: 0.5ex;
+      }
+
+      h2 {
+        border-bottom: 1px solid #aaa;
+        padding-bottom: 0.5ex;
+        margin: 1.5em 0;
+      }
+
+      h3 {
+        font-weight: normal;
+        border-bottom: 1px solid #aaa;
+        padding-bottom: 0.5ex;
+      }
+
+      a {
+        text-decoration: none;
+        color: #567e25;
+      }
+
+      table {
+        width: 100%;
+        font-size: 80%;
+        border-collapse: collapse;
+      }
+
+      thead {
+        font-weight: 700;
+        background-color: #dcdcdc;
+      }
+
+      tbody tr:nth-child(even) {
+        background-color: #fbfbfb;
+      }
+
+      td {
+        border: 1px solid #ccc;
+        padding: 0.5ex 2ex;
+      }
+
+      td p {
+        text-indent: 1em;
+        margin: 0;
+      }
+
+      td p:nth-child(1) {
+        text-indent: 0;  
+      }
+
+       
+      .field-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .field-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .field-table td:nth-child(3) {  
+        width: 6em;
+      }
+      .field-table td:nth-child(4) {  
+        width: auto;
+      }
+
+       
+      .extension-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(3) {  
+        width: 10em;
+      }
+      .extension-table td:nth-child(4) {  
+        width: 5em;
+      }
+      .extension-table td:nth-child(5) {  
+        width: auto;
+      }
+
+       
+      .enum-table td:nth-child(1) {  
+        width: 10em;
+      }
+      .enum-table td:nth-child(2) {  
+        width: 10em;
+      }
+      .enum-table td:nth-child(3) {  
+        width: auto;
+      }
+
+       
+      .scalar-value-types-table tr {
+        height: 3em;
+      }
+
+       
+      #toc-container ul {
+        list-style-type: none;
+        padding-left: 1em;
+        line-height: 180%;
+        margin: 0;
+      }
+      #toc > li > a {
+        font-weight: bold;
+      }
+
+       
+      .file-heading {
+        width: 100%;
+        display: table;
+        border-bottom: 1px solid #aaa;
+        margin: 4em 0 1.5em 0;
+      }
+      .file-heading h2 {
+        border: none;
+        display: table-cell;
+      }
+      .file-heading a {
+        text-align: right;
+        display: table-cell;
+      }
+
+       
+      .badge {
+        width: 1.6em;
+        height: 1.6em;
+        display: inline-block;
+
+        line-height: 1.6em;
+        text-align: center;
+        font-weight: bold;
+        font-size: 60%;
+
+        color: #89ba48;
+        background-color: #dff0c8;
+
+        margin: 0.5ex 1em 0.5ex -1em;
+        border: 1px solid #fbfbfb;
+        border-radius: 1ex;
+      }
+    </style>
+
+    
+    <link rel="stylesheet" type="text/css" href="/stylesheets/api.css"/>
+  </head>
+
+  <body>
+
+    <h1 id="title">Client API Reference, v2.2.5</h1>
+
+    <h2>Table of Contents</h2>
+
+    <div id="toc-container">
+      <ul id="toc">
+        
+          
+          <li>
+            <a href="#dse.proto">dse.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#dse.AbortTrialRequest"><span class="badge">M</span>AbortTrialRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#dse.AbortTrialResponse"><span class="badge">M</span>AbortTrialResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#dse.CollectiveImplementations"><span class="badge">M</span>CollectiveImplementations</a>
+                </li>
+              
+                <li>
+                  <a href="#dse.CreateBindingRequest"><span class="badge">M</span>CreateBindingRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#dse.CreateBindingResponse"><span class="badge">M</span>CreateBindingResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#dse.GetDiagnosticFileRequest"><span class="badge">M</span>GetDiagnosticFileRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#dse.GetDiagnosticFileResponse"><span class="badge">M</span>GetDiagnosticFileResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#dse.RunLogs"><span class="badge">M</span>RunLogs</a>
+                </li>
+              
+                <li>
+                  <a href="#dse.Trial"><span class="badge">M</span>Trial</a>
+                </li>
+              
+                <li>
+                  <a href="#dse.TrialMeta"><span class="badge">M</span>TrialMeta</a>
+                </li>
+              
+                <li>
+                  <a href="#dse.TrialReport"><span class="badge">M</span>TrialReport</a>
+                </li>
+              
+                <li>
+                  <a href="#dse.WorkspaceSpec"><span class="badge">M</span>WorkspaceSpec</a>
+                </li>
+              
+              
+                <li>
+                  <a href="#dse.AbortState"><span class="badge">E</span>AbortState</a>
+                </li>
+              
+                <li>
+                  <a href="#dse.SeverityLevel"><span class="badge">E</span>SeverityLevel</a>
+                </li>
+              
+                <li>
+                  <a href="#dse.TrialState"><span class="badge">E</span>TrialState</a>
+                </li>
+              
+              
+              
+                <li>
+                  <a href="#dse.DseService"><span class="badge">S</span>DseService</a>
+                </li>
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#common.proto">common.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#common.Algorithm"><span class="badge">M</span>Algorithm</a>
+                </li>
+              
+                <li>
+                  <a href="#common.ChassisInfo"><span class="badge">M</span>ChassisInfo</a>
+                </li>
+              
+                <li>
+                  <a href="#common.CollectiveImplementation"><span class="badge">M</span>CollectiveImplementation</a>
+                </li>
+              
+                <li>
+                  <a href="#common.CongestionControl"><span class="badge">M</span>CongestionControl</a>
+                </li>
+              
+                <li>
+                  <a href="#common.DCQCNRateControl"><span class="badge">M</span>DCQCNRateControl</a>
+                </li>
+              
+                <li>
+                  <a href="#common.EchoRequest"><span class="badge">M</span>EchoRequest</a>
+                </li>
+              
+                <li>
+                  <a href="#common.EchoResponse"><span class="badge">M</span>EchoResponse</a>
+                </li>
+              
+                <li>
+                  <a href="#common.ExplicitCongestionNotifications"><span class="badge">M</span>ExplicitCongestionNotifications</a>
+                </li>
+              
+                <li>
+                  <a href="#common.FalconTransport"><span class="badge">M</span>FalconTransport</a>
+                </li>
+              
+                <li>
+                  <a href="#common.FlowControl"><span class="badge">M</span>FlowControl</a>
+                </li>
+              
+                <li>
+                  <a href="#common.Ipv4Addressing"><span class="badge">M</span>Ipv4Addressing</a>
+                </li>
+              
+                <li>
+                  <a href="#common.Ipv6Addressing"><span class="badge">M</span>Ipv6Addressing</a>
+                </li>
+              
+                <li>
+                  <a href="#common.IxperfConfig"><span class="badge">M</span>IxperfConfig</a>
+                </li>
+              
+                <li>
+                  <a href="#common.IxperfConfig.CustomEnvVarsEntry"><span class="badge">M</span>IxperfConfig.CustomEnvVarsEntry</a>
+                </li>
+              
+                <li>
+                  <a href="#common.Layer1"><span class="badge">M</span>Layer1</a>
+                </li>
+              
+                <li>
+                  <a href="#common.NcclConfig"><span class="badge">M</span>NcclConfig</a>
+                </li>
+              
+                <li>
+                  <a href="#common.NcclConfig.CustomEnvVarsEntry"><span class="badge">M</span>NcclConfig.CustomEnvVarsEntry</a>
+                </li>
+              
+                <li>
+                  <a href="#common.NicSettings"><span class="badge">M</span>NicSettings</a>
+                </li>
+              
+                <li>
+                  <a href="#common.PacketCapture"><span class="badge">M</span>PacketCapture</a>
+                </li>
+              
+                <li>
+                  <a href="#common.PriorityFlowControl"><span class="badge">M</span>PriorityFlowControl</a>
+                </li>
+              
+                <li>
+                  <a href="#common.Qos"><span class="badge">M</span>Qos</a>
+                </li>
+              
+                <li>
+                  <a href="#common.Qos.MapDscpToPrioEntry"><span class="badge">M</span>Qos.MapDscpToPrioEntry</a>
+                </li>
+              
+                <li>
+                  <a href="#common.Qos.MapPrioToTrafficClassEntry"><span class="badge">M</span>Qos.MapPrioToTrafficClassEntry</a>
+                </li>
+              
+                <li>
+                  <a href="#common.Rocev2Transport"><span class="badge">M</span>Rocev2Transport</a>
+                </li>
+              
+                <li>
+                  <a href="#common.Rocev2TransportSettings"><span class="badge">M</span>Rocev2TransportSettings</a>
+                </li>
+              
+                <li>
+                  <a href="#common.ServerInfo"><span class="badge">M</span>ServerInfo</a>
+                </li>
+              
+                <li>
+                  <a href="#common.TcpTransport"><span class="badge">M</span>TcpTransport</a>
+                </li>
+              
+                <li>
+                  <a href="#common.Vlan"><span class="badge">M</span>Vlan</a>
+                </li>
+              
+                <li>
+                  <a href="#common.VlanTag"><span class="badge">M</span>VlanTag</a>
+                </li>
+              
+              
+                <li>
+                  <a href="#common.AlgorithmType"><span class="badge">E</span>AlgorithmType</a>
+                </li>
+              
+                <li>
+                  <a href="#common.BufferFullAction"><span class="badge">E</span>BufferFullAction</a>
+                </li>
+              
+                <li>
+                  <a href="#common.EcnBits"><span class="badge">E</span>EcnBits</a>
+                </li>
+              
+                <li>
+                  <a href="#common.FlowControlDistributionType"><span class="badge">E</span>FlowControlDistributionType</a>
+                </li>
+              
+                <li>
+                  <a href="#common.PlatformType"><span class="badge">E</span>PlatformType</a>
+                </li>
+              
+                <li>
+                  <a href="#common.PrioTrustMode"><span class="badge">E</span>PrioTrustMode</a>
+                </li>
+              
+                <li>
+                  <a href="#common.RDMAVerb"><span class="badge">E</span>RDMAVerb</a>
+                </li>
+              
+                <li>
+                  <a href="#common.RoCEv2QPNegotiationMethod"><span class="badge">E</span>RoCEv2QPNegotiationMethod</a>
+                </li>
+              
+                <li>
+                  <a href="#common.RoCEv2RNRTimeout"><span class="badge">E</span>RoCEv2RNRTimeout</a>
+                </li>
+              
+                <li>
+                  <a href="#common.SpeedMode"><span class="badge">E</span>SpeedMode</a>
+                </li>
+              
+                <li>
+                  <a href="#common.SpeedType"><span class="badge">E</span>SpeedType</a>
+                </li>
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#app_common.proto">app_common.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#app_common.SummaryTable"><span class="badge">M</span>SummaryTable</a>
+                </li>
+              
+                <li>
+                  <a href="#app_common.TrialArtifacts"><span class="badge">M</span>TrialArtifacts</a>
+                </li>
+              
+              
+                <li>
+                  <a href="#app_common.ArtifactType"><span class="badge">E</span>ArtifactType</a>
+                </li>
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#dse_infra.proto">dse_infra.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#dse_infra.BlackboxFabric"><span class="badge">M</span>BlackboxFabric</a>
+                </li>
+              
+                <li>
+                  <a href="#dse_infra.ClosFabric"><span class="badge">M</span>ClosFabric</a>
+                </li>
+              
+                <li>
+                  <a href="#dse_infra.Fabric"><span class="badge">M</span>Fabric</a>
+                </li>
+              
+                <li>
+                  <a href="#dse_infra.GenericHost"><span class="badge">M</span>GenericHost</a>
+                </li>
+              
+                <li>
+                  <a href="#dse_infra.Host"><span class="badge">M</span>Host</a>
+                </li>
+              
+                <li>
+                  <a href="#dse_infra.InfraBandwidth"><span class="badge">M</span>InfraBandwidth</a>
+                </li>
+              
+                <li>
+                  <a href="#dse_infra.Infrastructure"><span class="badge">M</span>Infrastructure</a>
+                </li>
+              
+                <li>
+                  <a href="#dse_infra.MaxPortsDownFromDevice"><span class="badge">M</span>MaxPortsDownFromDevice</a>
+                </li>
+              
+                <li>
+                  <a href="#dse_infra.MaxPortsUpToPeer"><span class="badge">M</span>MaxPortsUpToPeer</a>
+                </li>
+              
+                <li>
+                  <a href="#dse_infra.OversubscriptionRatio"><span class="badge">M</span>OversubscriptionRatio</a>
+                </li>
+              
+                <li>
+                  <a href="#dse_infra.RackPlaneFabric"><span class="badge">M</span>RackPlaneFabric</a>
+                </li>
+              
+                <li>
+                  <a href="#dse_infra.RackPlaneHost"><span class="badge">M</span>RackPlaneHost</a>
+                </li>
+              
+                <li>
+                  <a href="#dse_infra.TierConfig"><span class="badge">M</span>TierConfig</a>
+                </li>
+              
+                <li>
+                  <a href="#dse_infra.ZionexHost"><span class="badge">M</span>ZionexHost</a>
+                </li>
+              
+              
+                <li>
+                  <a href="#dse_infra.HostWiringSchema"><span class="badge">E</span>HostWiringSchema</a>
+                </li>
+              
+                <li>
+                  <a href="#dse_infra.NVLinkVersionBandwidth"><span class="badge">E</span>NVLinkVersionBandwidth</a>
+                </li>
+              
+                <li>
+                  <a href="#dse_infra.SpineWiringSchema"><span class="badge">E</span>SpineWiringSchema</a>
+                </li>
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#kccb.proto">kccb.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#kccb.Benchmark"><span class="badge">M</span>Benchmark</a>
+                </li>
+              
+                <li>
+                  <a href="#kccb.Config"><span class="badge">M</span>Config</a>
+                </li>
+              
+                <li>
+                  <a href="#kccb.Datasize"><span class="badge">M</span>Datasize</a>
+                </li>
+              
+                <li>
+                  <a href="#kccb.DatasizeList"><span class="badge">M</span>DatasizeList</a>
+                </li>
+              
+              
+              
+              
+            </ul>
+          </li>
+        
+          
+          <li>
+            <a href="#bind.proto">bind.proto</a>
+            <ul>
+              
+                <li>
+                  <a href="#bind.Binding"><span class="badge">M</span>Binding</a>
+                </li>
+              
+                <li>
+                  <a href="#bind.CustomBinding"><span class="badge">M</span>CustomBinding</a>
+                </li>
+              
+                <li>
+                  <a href="#bind.InfraRef"><span class="badge">M</span>InfraRef</a>
+                </li>
+              
+                <li>
+                  <a href="#bind.InfraRegion"><span class="badge">M</span>InfraRegion</a>
+                </li>
+              
+                <li>
+                  <a href="#bind.NicBinding"><span class="badge">M</span>NicBinding</a>
+                </li>
+              
+                <li>
+                  <a href="#bind.PhysicalBinding"><span class="badge">M</span>PhysicalBinding</a>
+                </li>
+              
+                <li>
+                  <a href="#bind.PlatformRegion"><span class="badge">M</span>PlatformRegion</a>
+                </li>
+              
+                <li>
+                  <a href="#bind.RankBinding"><span class="badge">M</span>RankBinding</a>
+                </li>
+              
+              
+              
+              
+            </ul>
+          </li>
+        
+        <li><a href="#scalar-value-types">Scalar Value Types</a></li>
+      </ul>
+    </div>
+
+    
+      
+      <div class="file-heading">
+        <h2 id="dse.proto">dse.proto</h2><a href="#title">Top</a>
+      </div>
+      <p>dse.proto</p><p>A low level data model and APIs for describing an Keysight AI/ML experiment</p><p>Must immediately follow header comments (no blank lines)</p>
+
+      
+        <h3 id="dse.AbortTrialRequest">AbortTrialRequest</h3>
+        <p>Request to abort a trial</p><p>Currently, it will try to abort only the current running config, which is already stored in DSE</p>
+
+        
+
+        
+      
+        <h3 id="dse.AbortTrialResponse">AbortTrialResponse</h3>
+        <p>Contains information about a trial abort</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>state</td>
+                  <td><a href="#dse.AbortState">AbortState</a></td>
+                  <td></td>
+                  <td><p>Return the state </p></td>
+                </tr>
+              
+                <tr>
+                  <td>message</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>A message containing relevant information for the abort. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="dse.CollectiveImplementations">CollectiveImplementations</h3>
+        <p>Wrapper message for gRPC response.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>collective_implementations</td>
+                  <td><a href="#common.CollectiveImplementation">common.CollectiveImplementation</a></td>
+                  <td>repeated</td>
+                  <td><p>List of collective implementations </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="dse.CreateBindingRequest">CreateBindingRequest</h3>
+        <p>A set of RDMA packet match conditions.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>infrastructure_profile</td>
+                  <td><a href="#profiles.InfraProfile">profiles.InfraProfile</a></td>
+                  <td></td>
+                  <td><p>The infrastructure profile to use for the binding. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>prev_binding</td>
+                  <td><a href="#bind.Binding">bind.Binding</a></td>
+                  <td>optional</td>
+                  <td><p>previous binding (if any), useful for incremental changes to existing bindings </p></td>
+                </tr>
+              
+                <tr>
+                  <td>platform_regions</td>
+                  <td><a href="#bind.PlatformRegion">bind.PlatformRegion</a></td>
+                  <td>repeated</td>
+                  <td><p>Assigns platforms to different regions of the infrastructure.
+DSE server will raise an error if this is non-empty and feature flag onearm is not being used. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>platform</td>
+                  <td><a href="#common.PlatformType">common.PlatformType</a></td>
+                  <td></td>
+                  <td><p>The platform type. Typically obtained from CreateBinding() </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="dse.CreateBindingResponse">CreateBindingResponse</h3>
+        <p>Response containing a list of trial reports</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>binding</td>
+                  <td><a href="#bind.Binding">bind.Binding</a></td>
+                  <td></td>
+                  <td><p>The created binding object </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="dse.GetDiagnosticFileRequest">GetDiagnosticFileRequest</h3>
+        <p>Request to get diagnostic files for specified trials.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>result_ids</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>result ids can be obtained from the trial_report, provided by ListTrialReports api call
+If result_ids is empty, then it will collect diagnostics for the currently configured trial
+list of result ids to include in the diagnostic file </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="dse.GetDiagnosticFileResponse">GetDiagnosticFileResponse</h3>
+        <p>Response containing a list of trial reports</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>filepath</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>filepath to the archived log files (zip, tar, etc.) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>url</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>URL to download the diagnostic file </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="dse.RunLogs">RunLogs</h3>
+        <p>Message in a stream of updates returned while running a trial.</p><p>The client can print the log messages returned by each update to</p><p>have a live indication of progress.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>log_messages</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Sequence number of the log message. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>timestamp</td>
+                  <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
+                  <td></td>
+                  <td><p>The timestamp signifies the time at which the log message was generated. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>severity_level</td>
+                  <td><a href="#dse.SeverityLevel">SeverityLevel</a></td>
+                  <td></td>
+                  <td><p>The severity level of the log message. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>component_name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The name of the component emitting the log message. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="dse.Trial">Trial</h3>
+        <p>Trial is a message that contains all the required messages used to define a trial run.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>workspace</td>
+                  <td><a href="#dse.WorkspaceSpec">WorkspaceSpec</a></td>
+                  <td></td>
+                  <td><p>The workspace that the trial will be stored under.
+If the workspace does not exist, it will be created. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>tags</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>A list of tags associated with this trial. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>platform</td>
+                  <td><a href="#common.PlatformType">common.PlatformType</a></td>
+                  <td></td>
+                  <td><p>The type of platform to run the workload over </p></td>
+                </tr>
+              
+                <tr>
+                  <td>nccl_config</td>
+                  <td><a href="#common.NcclConfig">common.NcclConfig</a></td>
+                  <td></td>
+                  <td><p>configuration settings specific to nccl </p></td>
+                </tr>
+              
+                <tr>
+                  <td>tcp</td>
+                  <td><a href="#common.TcpTransport">common.TcpTransport</a></td>
+                  <td></td>
+                  <td><p>TCP transport configuration </p></td>
+                </tr>
+              
+                <tr>
+                  <td>rocev2</td>
+                  <td><a href="#common.Rocev2Transport">common.Rocev2Transport</a></td>
+                  <td></td>
+                  <td><p>RoCEv2 transport configuration </p></td>
+                </tr>
+              
+                <tr>
+                  <td>falcon</td>
+                  <td><a href="#common.FalconTransport">common.FalconTransport</a></td>
+                  <td></td>
+                  <td><p>BEGIN PRIVATE
+Falcon transport configuration </p></td>
+                </tr>
+              
+                <tr>
+                  <td>kccb</td>
+                  <td><a href="#kccb.Config">kccb.Config</a></td>
+                  <td></td>
+                  <td><p>KCCB configuration </p></td>
+                </tr>
+              
+                <tr>
+                  <td>workload_replay</td>
+                  <td><a href="#workload_replay.Config">workload_replay.Config</a></td>
+                  <td></td>
+                  <td><p>Workload replay configuration </p></td>
+                </tr>
+              
+                <tr>
+                  <td>binding</td>
+                  <td><a href="#bind.Binding">bind.Binding</a></td>
+                  <td>optional</td>
+                  <td><p>typically obtained from CreateBinding() </p></td>
+                </tr>
+              
+                <tr>
+                  <td>trial_meta</td>
+                  <td><a href="#dse.TrialMeta">TrialMeta</a></td>
+                  <td></td>
+                  <td><p>hold version info </p></td>
+                </tr>
+              
+                <tr>
+                  <td>impairments</td>
+                  <td><a href="#impairment.Impairments">impairment.Impairments</a></td>
+                  <td></td>
+                  <td><p>List of impairment metrics </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="dse.TrialMeta">TrialMeta</h3>
+        <p>holds the model version and maybe more in the future</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>model_version</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The unique identifier for the trial </p></td>
+                </tr>
+              
+                <tr>
+                  <td>is_readonly</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>The is_readonly is set if the config cannot be used to run a trial. 
+E.g. part of the config not exposed by the UI is removed before saving.
+The configuration can be inspected in the UI, but a trial will fail to run. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="dse.TrialReport">TrialReport</h3>
+        <p>Contains information about a trial that has run, is running, or has yet to be started.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>timestamp</td>
+                  <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
+                  <td></td>
+                  <td><p>The timestamp signifies the time at which a trial run was started.
+In storage, each trial directory is named according to the following format:
+ISO 8601 formatted timestamp YYYY-MM-DDTHH:mm:SS.ms:timezone </p></td>
+                </tr>
+              
+                <tr>
+                  <td>workspace</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>workspace name </p></td>
+                </tr>
+              
+                <tr>
+                  <td>path</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The storage path of the trial directory. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>tags</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Tags associated with the trial. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>description</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Description of the trial </p></td>
+                </tr>
+              
+                <tr>
+                  <td>state</td>
+                  <td><a href="#dse.TrialState">TrialState</a></td>
+                  <td></td>
+                  <td><p>Stores the current state of this trial. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>system_tags</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>System tags associated with the trial. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>end_timestamp</td>
+                  <td><a href="#google.protobuf.Timestamp">google.protobuf.Timestamp</a></td>
+                  <td></td>
+                  <td><p>The timestamp signifies the time at which a trial run was completed. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>kccb_summary</td>
+                  <td><a href="#app_common.SummaryTable">app_common.SummaryTable</a></td>
+                  <td></td>
+                  <td><p>A table of nccl-like summary results </p></td>
+                </tr>
+              
+                <tr>
+                  <td>workload_replay_summary</td>
+                  <td><a href="#app_common.SummaryTable">app_common.SummaryTable</a></td>
+                  <td></td>
+                  <td><p>A table of workload replay summary results </p></td>
+                </tr>
+              
+                <tr>
+                  <td>kccb_artifacts</td>
+                  <td><a href="#app_common.TrialArtifacts">app_common.TrialArtifacts</a></td>
+                  <td></td>
+                  <td><p>A collection of artifacts generated by the trial that are saved in storage. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>workload_replay_artifacts</td>
+                  <td><a href="#app_common.TrialArtifacts">app_common.TrialArtifacts</a></td>
+                  <td></td>
+                  <td><p>A collection of artifacts generated by the trial that are saved in storage. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>use_report_v2</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td>optional</td>
+                  <td><p>A flag to indicate whether to use the v2 report format </p></td>
+                </tr>
+              
+                <tr>
+                  <td>info_report_v2</td>
+                  <td><a href="#storage_v2.TrialReportDetailInfo">storage_v2.TrialReportDetailInfo</a></td>
+                  <td>optional</td>
+                  <td><p>Detailed report information in v2 format </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="dse.WorkspaceSpec">WorkspaceSpec</h3>
+        <p>Describes a workspace to be created/updated.</p><p>If the workspace already exists, the list of tags will be appended to that</p><p>workspace if they are not already attached to that workspace.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Workspace name </p></td>
+                </tr>
+              
+                <tr>
+                  <td>tags</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>List of tags to allow filtering trial results </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+        <h3 id="dse.AbortState">AbortState</h3>
+        <p>State of an abort request.</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>ABORT_UNDEFINED</td>
+                <td>0</td>
+                <td><p>Undefined state</p></td>
+              </tr>
+            
+              <tr>
+                <td>ABORT_INITIATED</td>
+                <td>1</td>
+                <td><p>The abort request has been initiated</p></td>
+              </tr>
+            
+              <tr>
+                <td>ABORT_ERROR</td>
+                <td>2</td>
+                <td><p>An error occurred during the abort process</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="dse.SeverityLevel">SeverityLevel</h3>
+        <p>Contains information about the severity level of a log message.</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>LEVEL_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>Unspecified severity level</p></td>
+              </tr>
+            
+              <tr>
+                <td>LEVEL_DEBUG</td>
+                <td>1</td>
+                <td><p>Debugging information</p></td>
+              </tr>
+            
+              <tr>
+                <td>LEVEL_INFO</td>
+                <td>2</td>
+                <td><p>Informational messages</p></td>
+              </tr>
+            
+              <tr>
+                <td>LEVEL_WARNING</td>
+                <td>3</td>
+                <td><p>Warning messages</p></td>
+              </tr>
+            
+              <tr>
+                <td>LEVEL_ERROR</td>
+                <td>4</td>
+                <td><p>Error messages</p></td>
+              </tr>
+            
+              <tr>
+                <td>LEVEL_CRITICAL</td>
+                <td>5</td>
+                <td><p>Critical error messages</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="dse.TrialState">TrialState</h3>
+        <p>State of a trial run.</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>Trial state not specified, invalid value</p></td>
+              </tr>
+            
+              <tr>
+                <td>UNCONFIGURED</td>
+                <td>1</td>
+                <td><p>Trial is not configured</p></td>
+              </tr>
+            
+              <tr>
+                <td>CONFIGURATION_IN_PROGRESS</td>
+                <td>2</td>
+                <td><p>Trial configuration is in progress</p></td>
+              </tr>
+            
+              <tr>
+                <td>CONFIGURATION_SUCCESSFUL</td>
+                <td>3</td>
+                <td><p>Trial configuration completed successfully</p></td>
+              </tr>
+            
+              <tr>
+                <td>RUN_IN_PROGRESS</td>
+                <td>4</td>
+                <td><p>Trial run is in progress</p></td>
+              </tr>
+            
+              <tr>
+                <td>RUN_SUCCESSFUL</td>
+                <td>5</td>
+                <td><p>Trial run completed successfully</p></td>
+              </tr>
+            
+              <tr>
+                <td>ERROR</td>
+                <td>6</td>
+                <td><p>Trial has encountered an error</p></td>
+              </tr>
+            
+              <tr>
+                <td>ABORTED</td>
+                <td>7</td>
+                <td><p>Trial has been aborted</p></td>
+              </tr>
+            
+              <tr>
+                <td>TERMINATED</td>
+                <td>8</td>
+                <td><p>Trial has been terminated</p></td>
+              </tr>
+            
+              <tr>
+                <td>ABORT_IN_PROGRESS</td>
+                <td>9</td>
+                <td><p>Trial abort is in progress</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+
+      
+
+      
+        <h3 id="dse.DseService">DseService</h3>
+        <p>DSE service definition</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Method Name</td><td>Request Type</td><td>Response Type</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>CreateBinding</td>
+                <td><a href="#dse.CreateBindingRequest">CreateBindingRequest</a></td>
+                <td><a href="#dse.CreateBindingResponse">CreateBindingResponse</a></td>
+                <td><p>create rank and physical bindings for use with a Trial object in ConfigureTrial/RunTrial</p></td>
+              </tr>
+            
+              <tr>
+                <td>ConfigureTrial</td>
+                <td><a href="#dse.Trial">Trial</a></td>
+                <td><a href="#dse.RunLogs">RunLogs</a> stream</td>
+                <td><p>ConfigureTrial sets up the trial based on the parameters provided.
+If the low-level config is not included, the server will use the high-level
+spec to generate the corresponding low-level config, which is returned as
+part of the response.</p></td>
+              </tr>
+            
+              <tr>
+                <td>AbortTrial</td>
+                <td><a href="#dse.AbortTrialRequest">AbortTrialRequest</a></td>
+                <td><a href="#dse.AbortTrialResponse">AbortTrialResponse</a></td>
+                <td><p>Aborts the currently running trial and receive the trial report aborted.
+Returns an error if no Trial has been configured</p></td>
+              </tr>
+            
+              <tr>
+                <td>RunTrial</td>
+                <td><a href="#google.protobuf.Empty">.google.protobuf.Empty</a></td>
+                <td><a href="#dse.RunLogs">RunLogs</a> stream</td>
+                <td><p>Run the currently configured trial and receive streaming updates.
+Returns an error if no Trial has been configured</p></td>
+              </tr>
+            
+              <tr>
+                <td>GetTrial</td>
+                <td><a href="#google.protobuf.Empty">.google.protobuf.Empty</a></td>
+                <td><a href="#dse.Trial">Trial</a></td>
+                <td><p>Returns the trial that is currently configured.
+If no trial is currently configured, the returned object will be uninitialized.</p></td>
+              </tr>
+            
+              <tr>
+                <td>GetTrialReport</td>
+                <td><a href="#google.protobuf.Empty">.google.protobuf.Empty</a></td>
+                <td><a href="#dse.TrialReport">TrialReport</a></td>
+                <td><p>TrialReport contains state information (not started, in progress, successful, error)
+
+Pattern is modeled after this: https://cloud.google.com/apis/design/design_patterns#long_running_operations
+although it does not match completely.</p></td>
+              </tr>
+            
+              <tr>
+                <td>GetTrialReportDetails</td>
+                <td><a href="#google.protobuf.Empty">.google.protobuf.Empty</a></td>
+                <td><a href="#storage_v2.TrialReportDetailInfo">.storage_v2.TrialReportDetailInfo</a></td>
+                <td><p>Returns the trial report of the most recently run trial. If no trial has been run, returns an empty message.</p></td>
+              </tr>
+            
+              <tr>
+                <td>GetCollectiveImplementations</td>
+                <td><a href="#google.protobuf.Empty">.google.protobuf.Empty</a></td>
+                <td><a href="#dse.CollectiveImplementations">CollectiveImplementations</a></td>
+                <td><p>Returns a list of all (CC operation, algorithmic implementation) pairs available on the DSE server.</p></td>
+              </tr>
+            
+              <tr>
+                <td>GetDiagnosticFile</td>
+                <td><a href="#dse.GetDiagnosticFileRequest">GetDiagnosticFileRequest</a></td>
+                <td><a href="#dse.GetDiagnosticFileResponse">GetDiagnosticFileResponse</a></td>
+                <td><p>Request to get diagnostic files for specified trials.</p></td>
+              </tr>
+            
+              <tr>
+                <td>Echo</td>
+                <td><a href="#common.EchoRequest">.common.EchoRequest</a></td>
+                <td><a href="#common.EchoResponse">.common.EchoResponse</a></td>
+                <td><p>test api</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+
+        
+    
+      
+      <div class="file-heading">
+        <h2 id="common.proto">common.proto</h2><a href="#title">Top</a>
+      </div>
+      <p>common.proto</p><p>Common data models</p><p>Must immediately follow header comments (no blank lines)</p>
+
+      
+        <h3 id="common.Algorithm">Algorithm</h3>
+        <p>Algorithm message specifies a choice of system provided Expanders or a user provided custom implementation</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>system</td>
+                  <td><a href="#common.AlgorithmType">AlgorithmType</a></td>
+                  <td></td>
+                  <td><p>A system supplied collective algorithm </p></td>
+                </tr>
+              
+                <tr>
+                  <td>custom</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>A path of format package.module.classname to a class that inherits from the keys_ai_ml_chakra.Expander. See the EXPANDERS.md in the keys_ai_ml_chakra package for details on how to create your own custom expander class. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>flow_control_config</td>
+                  <td><a href="#common.FlowControl">FlowControl</a></td>
+                  <td></td>
+                  <td><p>Configuration for flow control mechanism used by this algorithm. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="common.ChassisInfo">ChassisInfo</h3>
+        <p>Information about the chassis being used for emulation</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>address</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Chassis IP Address or FQDN </p></td>
+                </tr>
+              
+                <tr>
+                  <td>port</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Chassis port. Formats &lt;front-panel-port&gt; or &lt;front-panel-port&gt;.&lt;fanout&gt;. Examples: &#39;1&#39; or &#39;1.4&#39; </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="common.CollectiveImplementation">CollectiveImplementation</h3>
+        <p>Used to specify a (collective type, collective algorithm) pair.</p><p>The collective algorithm determines how a collective communication operation is expanded into</p><p>a set of peer-to-peer operations.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>type</td>
+                  <td><a href="#keysight_chakra.mlcommons.CollectiveCommType">keysight_chakra.mlcommons.CollectiveCommType</a></td>
+                  <td></td>
+                  <td><p>The type of collective communication operation. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>algorithm</td>
+                  <td><a href="#common.Algorithm">Algorithm</a></td>
+                  <td></td>
+                  <td><p>A system-provided or user-provided algorithm specification used to expand a collective communication operation into a set of peer-to-peer operations. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="common.CongestionControl">CongestionControl</h3>
+        <p>Congestion control mechanisms</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>ecn</td>
+                  <td><a href="#common.ExplicitCongestionNotifications">ExplicitCongestionNotifications</a></td>
+                  <td></td>
+                  <td><p>ECN configuration </p></td>
+                </tr>
+              
+                <tr>
+                  <td>pfc</td>
+                  <td><a href="#common.PriorityFlowControl">PriorityFlowControl</a></td>
+                  <td></td>
+                  <td><p>PFC configuration </p></td>
+                </tr>
+              
+                <tr>
+                  <td>dcqcn_rate_control</td>
+                  <td><a href="#common.DCQCNRateControl">DCQCNRateControl</a></td>
+                  <td></td>
+                  <td><p>DCQCN rate control configuration </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="common.DCQCNRateControl">DCQCNRateControl</h3>
+        <p>Data Center Quantized Congestion Notification rate control settings</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>enabled</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td>optional</td>
+                  <td><p>Enable/disable DCQCN </p></td>
+                </tr>
+              
+                <tr>
+                  <td>alpha_factor</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td>optional</td>
+                  <td><p>Factor to update Alpha every update period (fixed point fraction of 2^10) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>alpha_interval</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>Alpha update period (microseconds) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>initial_alpha</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>Initial Alpha value </p></td>
+                </tr>
+              
+                <tr>
+                  <td>rate_after_first_cnp</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>Current and target rate limit set after first CNP (Mbps) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>rate_decrement_factor</td>
+                  <td><a href="#float">float</a></td>
+                  <td>optional</td>
+                  <td><p>Maximal ratio of rate decrease in a single event (percentage) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>min_rate_limit</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>Minimal rate limit of the QP (Mbps) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>rate_decrement_coefficient</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>The coefficient between Alpha and the rate reduction factor </p></td>
+                </tr>
+              
+                <tr>
+                  <td>rate_decrement_interval</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>The minimum time period between rate reductions (microseconds) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>clamp_target_rate</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td>optional</td>
+                  <td><p>If enabled, whenever a CNP is processed, the target rate will be updated to the current rate </p></td>
+                </tr>
+              
+                <tr>
+                  <td>rate_increment_interval</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>The time period between rate increase events (microseconds) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>rate_increment_byte_counter</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>The sent bytes counter between rate increase events (64B) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>rate_increment_threshold</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>The threshold of rate increase events for moving to next rate increase phase </p></td>
+                </tr>
+              
+                <tr>
+                  <td>additive_rate_increment</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>The rate increase value in the Additive Increase phase (Mbps) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>hyper_rate_increment</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>The rate increase value in the Hyper Increase phase (Mbps) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>time_between_cnps</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>Minimal time between two consecutive CNPs sent (microseconds) </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="common.EchoRequest">EchoRequest</h3>
+        <p>A request to echo a simple message</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>message</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The message to echo </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="common.EchoResponse">EchoResponse</h3>
+        <p>The echo response from a service</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>message</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>The echoed message </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="common.ExplicitCongestionNotifications">ExplicitCongestionNotifications</h3>
+        <p>ECN configuration</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>cnp_dscp</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td>optional</td>
+                  <td><p>DSCP of CNP packets </p></td>
+                </tr>
+              
+                <tr>
+                  <td>data_ecn_bits</td>
+                  <td><a href="#common.EcnBits">EcnBits</a></td>
+                  <td>optional</td>
+                  <td><p>Configures the ECN bits for data packets </p></td>
+                </tr>
+              
+                <tr>
+                  <td>control_ecn_bits</td>
+                  <td><a href="#common.EcnBits">EcnBits</a></td>
+                  <td>optional</td>
+                  <td><p>Configures the ECN bits for control packets; eg RoCEv2 ACKs </p></td>
+                </tr>
+              
+                <tr>
+                  <td>cnp_ecn_bits</td>
+                  <td><a href="#common.EcnBits">EcnBits</a></td>
+                  <td>optional</td>
+                  <td><p>Configures the ECN bits for CNP packets </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="common.FalconTransport">FalconTransport</h3>
+        <p>BEGIN PRIVATE</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>rdma_message_size</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>(Maximum) RMDA message size in Bytes </p></td>
+                </tr>
+              
+                <tr>
+                  <td>qps_per_rankpair</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>Number of Queue Pairs per rank pair </p></td>
+                </tr>
+              
+                <tr>
+                  <td>qp_negotiation</td>
+                  <td><a href="#common.RoCEv2QPNegotiationMethod">RoCEv2QPNegotiationMethod</a></td>
+                  <td></td>
+                  <td><p>Queue Pair Negotiation method </p></td>
+                </tr>
+              
+                <tr>
+                  <td>verb</td>
+                  <td><a href="#common.RDMAVerb">RDMAVerb</a></td>
+                  <td></td>
+                  <td><p>RDMA verb to use for data transfers in collective communication operations </p></td>
+                </tr>
+              
+                <tr>
+                  <td>tcp_store_host</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>TCPStore hostname or IP address (only applicable when qp_negotiation is METHOD_TCP_STORE) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>tcp_store_port</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>TCPStore port number (only applicable when qp_negotiation is METHOD_TCP_STORE) </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="common.FlowControl">FlowControl</h3>
+        <p>Used to specify details needed to enable flow control feature</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>enable_flow_control</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>Enable flow control mechanism where receiver grants credits to sender to control the data flow. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>max_inflight_credits</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>Maximum number of credits allowed in flight. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>compute_delay</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>Delay between data reception and credit transmission (microseconds) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>credit_distribution</td>
+                  <td><a href="#common.FlowControlDistributionType">FlowControlDistributionType</a></td>
+                  <td></td>
+                  <td><p>Determines how credits are distributed across streams. One credit can either unblock one stream at a time or all streams simultaneously </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="common.Ipv4Addressing">Ipv4Addressing</h3>
+        <p>IPv4 Addressing configuration</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>ip_address</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>IP address </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ip_prefix</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>IP prefix </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ip_gateway_address</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Gateway IP address </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="common.Ipv6Addressing">Ipv6Addressing</h3>
+        <p>IPv6 Addressing configuration</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>ip_address</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>IP address </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ip_prefix</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>IP prefix </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ip_gateway_address</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Gateway IP address </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="common.IxperfConfig">IxperfConfig</h3>
+        <p>BEGIN PRIVATE</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>custom_env_vars</td>
+                  <td><a href="#common.IxperfConfig.CustomEnvVarsEntry">IxperfConfig.CustomEnvVarsEntry</a></td>
+                  <td>repeated</td>
+                  <td><p>Custom Ixperf environment variables </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="common.IxperfConfig.CustomEnvVarsEntry">IxperfConfig.CustomEnvVarsEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="common.Layer1">Layer1</h3>
+        <p>Layer 1 configuration</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>speed_mode</td>
+                  <td><a href="#common.SpeedMode">SpeedMode</a></td>
+                  <td></td>
+                  <td><p>Speed, modulation and FEC mode </p></td>
+                </tr>
+              
+                <tr>
+                  <td>auto_negotiate</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>Enable/disable auto negotiation </p></td>
+                </tr>
+              
+                <tr>
+                  <td>link_training</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>Enable/disable link training </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ieee_defaults</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>Enable/disable IEEE Defaults. This setting takes precedence over auto-negotiation and link training </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="common.NcclConfig">NcclConfig</h3>
+        <p>NCCL configuration parameters</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>custom_env_vars</td>
+                  <td><a href="#common.NcclConfig.CustomEnvVarsEntry">NcclConfig.CustomEnvVarsEntry</a></td>
+                  <td>repeated</td>
+                  <td><p>Custom NCCL environment variables </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="common.NcclConfig.CustomEnvVarsEntry">NcclConfig.CustomEnvVarsEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="common.NicSettings">NicSettings</h3>
+        <p>Network Interface Card settings</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>ethernet_mtu</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>Ethernet Maximum transmission unit </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ipv4_addressing</td>
+                  <td><a href="#common.Ipv4Addressing">Ipv4Addressing</a></td>
+                  <td></td>
+                  <td><p>IPv4 Addressing specifics </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ipv6_addressing</td>
+                  <td><a href="#common.Ipv6Addressing">Ipv6Addressing</a></td>
+                  <td></td>
+                  <td><p>IPv6 Addressing specifics </p></td>
+                </tr>
+              
+                <tr>
+                  <td>qos</td>
+                  <td><a href="#common.Qos">Qos</a></td>
+                  <td>optional</td>
+                  <td><p>BEGIN PRIVATE
+Quality of service </p></td>
+                </tr>
+              
+                <tr>
+                  <td>congestion_control</td>
+                  <td><a href="#common.CongestionControl">CongestionControl</a></td>
+                  <td>optional</td>
+                  <td><p>END PRIVATE
+Congestion control </p></td>
+                </tr>
+              
+                <tr>
+                  <td>packet_capture</td>
+                  <td><a href="#common.PacketCapture">PacketCapture</a></td>
+                  <td>optional</td>
+                  <td><p>BEGIN PRIVATE
+Packet capture
+
+END PRIVATE </p></td>
+                </tr>
+              
+                <tr>
+                  <td>mac_address</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>MAC address </p></td>
+                </tr>
+              
+                <tr>
+                  <td>vlan</td>
+                  <td><a href="#common.Vlan">Vlan</a></td>
+                  <td>optional</td>
+                  <td><p>VLAN Tags </p></td>
+                </tr>
+              
+                <tr>
+                  <td>roce_transport_settings</td>
+                  <td><a href="#common.Rocev2TransportSettings">Rocev2TransportSettings</a></td>
+                  <td></td>
+                  <td><p>ROCEv2 Transport specific settings </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="common.PacketCapture">PacketCapture</h3>
+        <p>BEGIN PRIVATE</p><p>Packet capture configuration</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>enabled</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>Enable/disable packet capture </p></td>
+                </tr>
+              
+                <tr>
+                  <td>capture_max_file_size</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td>optional</td>
+                  <td><p>Size of the capture file size in bytes. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>buffer_full_action</td>
+                  <td><a href="#common.BufferFullAction">BufferFullAction</a></td>
+                  <td>optional</td>
+                  <td><p>What to do when the capture buffer is full </p></td>
+                </tr>
+              
+                <tr>
+                  <td>packet_slice_size</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td>optional</td>
+                  <td><p>Size of each packet slice in bytes. If set to 0, the entire packet is captured </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="common.PriorityFlowControl">PriorityFlowControl</h3>
+        <p>PFC configuration</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>enabled</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td>optional</td>
+                  <td><p>Enable/disable Priority Flow Control </p></td>
+                </tr>
+              
+                <tr>
+                  <td>priorities</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td>repeated</td>
+                  <td><p>List of priorities </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="common.Qos">Qos</h3>
+        <p>BEGIN PRIVATE</p><p>Quality of Service configuration</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>priority_trust_mode</td>
+                  <td><a href="#common.PrioTrustMode">PrioTrustMode</a></td>
+                  <td></td>
+                  <td><p>Pirority Trust mode </p></td>
+                </tr>
+              
+                <tr>
+                  <td>map_dscp_to_prio</td>
+                  <td><a href="#common.Qos.MapDscpToPrioEntry">Qos.MapDscpToPrioEntry</a></td>
+                  <td>repeated</td>
+                  <td><p>DSCP to priority mapping </p></td>
+                </tr>
+              
+                <tr>
+                  <td>map_prio_to_traffic_class</td>
+                  <td><a href="#common.Qos.MapPrioToTrafficClassEntry">Qos.MapPrioToTrafficClassEntry</a></td>
+                  <td>repeated</td>
+                  <td><p>Priority to traffic class mapping </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="common.Qos.MapDscpToPrioEntry">Qos.MapDscpToPrioEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="common.Qos.MapPrioToTrafficClassEntry">Qos.MapPrioToTrafficClassEntry</h3>
+        <p></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>key</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+                <tr>
+                  <td>value</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p> </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="common.Rocev2Transport">Rocev2Transport</h3>
+        <p>RoCEv2 Transport configuration parameters</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>rdma_message_size</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>(Maximum) RMDA message size in Bytes </p></td>
+                </tr>
+              
+                <tr>
+                  <td>qps_per_rankpair</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>Number of Queue Pairs per rank pair </p></td>
+                </tr>
+              
+                <tr>
+                  <td>qp_negotiation</td>
+                  <td><a href="#common.RoCEv2QPNegotiationMethod">RoCEv2QPNegotiationMethod</a></td>
+                  <td></td>
+                  <td><p>Queue Pair Negotiation method </p></td>
+                </tr>
+              
+                <tr>
+                  <td>verb</td>
+                  <td><a href="#common.RDMAVerb">RDMAVerb</a></td>
+                  <td></td>
+                  <td><p>RDMA verb to use for data transfers in collective communication operations </p></td>
+                </tr>
+              
+                <tr>
+                  <td>tcp_store_host</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>TCPStore hostname or IP address (only applicable when qp_negotiation is METHOD_TCP_STORE) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>tcp_store_port</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>TCPStore port number (only applicable when qp_negotiation is METHOD_TCP_STORE) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>retx_retry_interval_ms</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td>optional</td>
+                  <td><p>The AckTimeout for RoCEv2 protocol </p></td>
+                </tr>
+              
+                <tr>
+                  <td>retx_retry_count</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td>optional</td>
+                  <td><p>The RetransRetryCount for RoCEv2 protocol </p></td>
+                </tr>
+              
+                <tr>
+                  <td>max_retry_on_rnr_nak</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td>optional</td>
+                  <td><p>Triggers retransmission when RNR NACK is received </p></td>
+                </tr>
+              
+                <tr>
+                  <td>ack_request_interval</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td>optional</td>
+                  <td><p>Request ACK after every N packets </p></td>
+                </tr>
+              
+                <tr>
+                  <td>reuse_qps</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td>optional</td>
+                  <td><p>Enable/disable reuse of Queue Pairs (QPs) for RDMA messages between a rank pair </p></td>
+                </tr>
+              
+                <tr>
+                  <td>support_rx_reordering</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td>optional</td>
+                  <td><p>Enable/disable the Rx Reordering </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="common.Rocev2TransportSettings">Rocev2TransportSettings</h3>
+        <p>RoCEv2 Transport specific settings</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>ack_dscp</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td>optional</td>
+                  <td><p>Configures  ACK DSCP value for RoCEv2 protocol </p></td>
+                </tr>
+              
+                <tr>
+                  <td>nack_dscp</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td>optional</td>
+                  <td><p>Configures  NACK DSCP value for RoCEv2 protocol </p></td>
+                </tr>
+              
+                <tr>
+                  <td>data_dscp</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td>optional</td>
+                  <td><p>Configures DSCP for all data traffic </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="common.ServerInfo">ServerInfo</h3>
+        <p>Information about servers being used for emulation</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>address</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Server IP address or FQDN </p></td>
+                </tr>
+              
+                <tr>
+                  <td>nic_interface</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>Server NIC interface </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="common.TcpTransport">TcpTransport</h3>
+        <p>TCP Transport configuration parameters</p>
+
+        
+
+        
+      
+        <h3 id="common.Vlan">Vlan</h3>
+        <p>VLAN Configuration</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>enabled</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>Enable/Disable VLAN </p></td>
+                </tr>
+              
+                <tr>
+                  <td>vlan_tags</td>
+                  <td><a href="#common.VlanTag">VlanTag</a></td>
+                  <td>repeated</td>
+                  <td><p>Currently one vlan tag is required. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="common.VlanTag">VlanTag</h3>
+        <p>VLAN Configuration</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>priority</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>VLAN Priority </p></td>
+                </tr>
+              
+                <tr>
+                  <td>vlan_id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>VLAN ID </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+        <h3 id="common.AlgorithmType">AlgorithmType</h3>
+        <p>Algorithm message specifies a choice of system provided Expanders or a user provided custom implementation</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>ALGO_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>Algorithm type not specified</p></td>
+              </tr>
+            
+              <tr>
+                <td>ALGO_ALL_TO_ALL_PARALLEL</td>
+                <td>1</td>
+                <td><p>All To All collective with chunk transfer in parallel</p></td>
+              </tr>
+            
+              <tr>
+                <td>ALGO_ALL_TO_ALL_PXN</td>
+                <td>2</td>
+                <td><p>All To All collective that leverages message aggregation and rail-optimized topologies.</p></td>
+              </tr>
+            
+              <tr>
+                <td>ALGO_ALL_REDUCE_UNIDIRECTIONAL_RING</td>
+                <td>10</td>
+                <td><p>All Reduce collective with chunk transfer in a unidirectional ring</p></td>
+              </tr>
+            
+              <tr>
+                <td>ALGO_ALL_REDUCE_BIDIRECTIONAL_RING</td>
+                <td>11</td>
+                <td><p>All Reduce collective with chunk transfer in a bidirectional ring</p></td>
+              </tr>
+            
+              <tr>
+                <td>ALGO_ALL_REDUCE_VECTOR_HALVING_DOUBLING</td>
+                <td>12</td>
+                <td><p>All Reduce collective using a vector halving doubling algorithm</p></td>
+              </tr>
+            
+              <tr>
+                <td>ALGO_ALL_REDUCE_DOUBLE_BINARY_TREE</td>
+                <td>13</td>
+                <td><p>All Reduce collective with chunk transfer in a double binary tree</p></td>
+              </tr>
+            
+              <tr>
+                <td>ALGO_ALL_GATHER_RING</td>
+                <td>20</td>
+                <td><p>All Gather collective with chunk transfer in a unidirectional ring</p></td>
+              </tr>
+            
+              <tr>
+                <td>ALGO_REDUCE_SCATTER_RING</td>
+                <td>30</td>
+                <td><p>Reduce Scatter collective with chunk transfer in a unidirectional ring</p></td>
+              </tr>
+            
+              <tr>
+                <td>ALGO_BROADCAST_PARALLEL</td>
+                <td>40</td>
+                <td><p>Broadcast collective with chunk transfer in parallel</p></td>
+              </tr>
+            
+              <tr>
+                <td>ALGO_GATHER_PARALLEL</td>
+                <td>50</td>
+                <td><p>Gather point to point collective (all to one) with chunk transfer in parallel</p></td>
+              </tr>
+            
+              <tr>
+                <td>ALGO_ALL_TO_ALL_PARALLEL_PP</td>
+                <td>60</td>
+                <td><p>All To All collective with chunk transfer in parallel MSCCL&#43;&#43; implementation</p></td>
+              </tr>
+            
+              <tr>
+                <td>ALGO_ALL_REDUCE_UNIDIRECTIONAL_RING_PP</td>
+                <td>70</td>
+                <td><p>All Reduce collective with chunk transfer in a unidirectional ring MSCCL&#43;&#43; implementation</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="common.BufferFullAction">BufferFullAction</h3>
+        <p>Action to take when the packet capture buffer is full</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>BUFFER_ACTION_OVERRIDE</td>
+                <td>0</td>
+                <td><p>Override the current buffer and save its contents</p></td>
+              </tr>
+            
+              <tr>
+                <td>BUFFER_ACTION_STOP</td>
+                <td>1</td>
+                <td><p>Stop the capture and dump the data to a file</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="common.EcnBits">EcnBits</h3>
+        <p>ECN field within an IP packet</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>ECN_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>ECN bits not specified</p></td>
+              </tr>
+            
+              <tr>
+                <td>ECN_DISABLED</td>
+                <td>1</td>
+                <td><p>00 - Non-ECT - Packets are marked as not ECN-capable</p></td>
+              </tr>
+            
+              <tr>
+                <td>ECN_ECT1</td>
+                <td>2</td>
+                <td><p>01 - ECT(1) - ECN-capable transport</p></td>
+              </tr>
+            
+              <tr>
+                <td>ECN_ECT0</td>
+                <td>3</td>
+                <td><p>10 - ECT(0) - ECN-capable transport</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="common.FlowControlDistributionType">FlowControlDistributionType</h3>
+        <p>Defines the way credits are distributed when flow control feature is used</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>FLOW_CONTROL_DISTRIBUTION_TYPE_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>Credit distribution type not specified</p></td>
+              </tr>
+            
+              <tr>
+                <td>ALL_STREAMS</td>
+                <td>1</td>
+                <td><p>Credits distributed to all available streams.</p></td>
+              </tr>
+            
+              <tr>
+                <td>SINGLE_STREAM</td>
+                <td>2</td>
+                <td><p>Credits distributed to a single stream at a time.</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="common.PlatformType">PlatformType</h3>
+        <p>Platform types available for executing workloads</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>PLATFORM_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>Platform type not specified</p></td>
+              </tr>
+            
+              <tr>
+                <td>PLATFORM_KEYS_NCCL_TEST</td>
+                <td>1</td>
+                <td><p>Use Keysight orchestrated NCCL test to execute the workload</p></td>
+              </tr>
+            
+              <tr>
+                <td>PLATFORM_KEYS_SW_AGENT</td>
+                <td>2</td>
+                <td><p>Use Keysight software agent to execute the workload</p></td>
+              </tr>
+            
+              <tr>
+                <td>PLATFORM_KEYS_HW</td>
+                <td>3</td>
+                <td><p>Use Keysight hardware to execute the workload</p></td>
+              </tr>
+            
+              <tr>
+                <td>PLATFORM_EXTERNAL</td>
+                <td>10</td>
+                <td><p>EXPERIMENTAL
+External Platform</p></td>
+              </tr>
+            
+              <tr>
+                <td>SCP_SIMULATION</td>
+                <td>50</td>
+                <td><p>use 50 as base for Simulation Platform
+Use SCP Simulation platform to execute the workload</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="common.PrioTrustMode">PrioTrustMode</h3>
+        <p>BEGIN PRIVATE</p><p>Configures trust state</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>TRUST_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>Priority trust mode not specified</p></td>
+              </tr>
+            
+              <tr>
+                <td>TRUST_DSCP</td>
+                <td>1</td>
+                <td><p>L3 trust, based on Differentiated Services Code Point
+Differentiated Services Code Point</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="common.RDMAVerb">RDMAVerb</h3>
+        <p>RDMA verbs supported for data transfers</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>VERB_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>RDMA verb not specified</p></td>
+              </tr>
+            
+              <tr>
+                <td>VERB_WRITE</td>
+                <td>1</td>
+                <td><p>RDMA Verb Write</p></td>
+              </tr>
+            
+              <tr>
+                <td>VERB_SEND</td>
+                <td>2</td>
+                <td><p>RDMA Verb Send</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="common.RoCEv2QPNegotiationMethod">RoCEv2QPNegotiationMethod</h3>
+        <p>Methods available for RoCEv2 Queue Pair negotiation</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>METHOD_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>Queue Pair negotiation method not specified</p></td>
+              </tr>
+            
+              <tr>
+                <td>METHOD_KEYS_PROPRIETARY</td>
+                <td>1</td>
+                <td><p>Negotiate queue pairs using Keysight proprietary implementation</p></td>
+              </tr>
+            
+              <tr>
+                <td>METHOD_TCP</td>
+                <td>2</td>
+                <td><p>Negotiate queue pairs using TCP</p></td>
+              </tr>
+            
+              <tr>
+                <td>METHOD_TCP_STORE</td>
+                <td>3</td>
+                <td><p>Negotiate queue pairs using a TCP-based store implementation</p></td>
+              </tr>
+            
+              <tr>
+                <td>METHOD_RDMA_CM</td>
+                <td>4</td>
+                <td><p>Negotiate queue pairs using RDMA communication management implementation</p></td>
+              </tr>
+            
+              <tr>
+                <td>METHOD_AUTOMATIC</td>
+                <td>5</td>
+                <td><p>Use the default negotiation method for the selected platform</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="common.RoCEv2RNRTimeout">RoCEv2RNRTimeout</h3>
+        <p>Relevant only for RC QPs</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>TIMEOUT_655360_MU</td>
+                <td>0</td>
+                <td><p>Receiver Not Ready Timeout 655.36 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_10_MU</td>
+                <td>1</td>
+                <td><p>Receiver Not Ready Timeout 0.01 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_20_MU</td>
+                <td>2</td>
+                <td><p>Receiver Not Ready Timeout 0.02 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_30_MU</td>
+                <td>3</td>
+                <td><p>Receiver Not Ready Timeout 0.03 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_40_MU</td>
+                <td>4</td>
+                <td><p>Receiver Not Ready Timeout 0.04 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_60_MU</td>
+                <td>5</td>
+                <td><p>Receiver Not Ready Timeout 0.06 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_80_MU</td>
+                <td>6</td>
+                <td><p>Receiver Not Ready Timeout 0.08 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_120_MU</td>
+                <td>7</td>
+                <td><p>Receiver Not Ready Timeout 0.12 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_160_MU</td>
+                <td>8</td>
+                <td><p>Receiver Not Ready Timeout 0.16 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_240_MU</td>
+                <td>9</td>
+                <td><p>Receiver Not Ready Timeout 0.24 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_320_MU</td>
+                <td>10</td>
+                <td><p>Receiver Not Ready Timeout 0.32 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_480_MU</td>
+                <td>11</td>
+                <td><p>Receiver Not Ready Timeout 0.48 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_640_MU</td>
+                <td>12</td>
+                <td><p>Receiver Not Ready Timeout 0.64 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_960_MU</td>
+                <td>13</td>
+                <td><p>Receiver Not Ready Timeout 0.96 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_1280_MU</td>
+                <td>14</td>
+                <td><p>Receiver Not Ready Timeout 1.28 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_1920_MU</td>
+                <td>15</td>
+                <td><p>Receiver Not Ready Timeout 1.92 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_2560_MU</td>
+                <td>16</td>
+                <td><p>Receiver Not Ready Timeout 2.56 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_3840_MU</td>
+                <td>17</td>
+                <td><p>Receiver Not Ready Timeout 3.84 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_5120_MU</td>
+                <td>18</td>
+                <td><p>Receiver Not Ready Timeout 5.12 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_7680_MU</td>
+                <td>19</td>
+                <td><p>Receiver Not Ready Timeout 7.68 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_10240_MU</td>
+                <td>20</td>
+                <td><p>Receiver Not Ready Timeout 10.24 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_15360_MU</td>
+                <td>21</td>
+                <td><p>Receiver Not Ready Timeout 15.36 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_20480_MU</td>
+                <td>22</td>
+                <td><p>Receiver Not Ready Timeout 20.48 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_30720_MU</td>
+                <td>23</td>
+                <td><p>Receiver Not Ready Timeout 30.72 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_40960_MU</td>
+                <td>24</td>
+                <td><p>Receiver Not Ready Timeout 40.96 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_61440_MU</td>
+                <td>25</td>
+                <td><p>Receiver Not Ready Timeout 61.44 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_81920_MU</td>
+                <td>26</td>
+                <td><p>Receiver Not Ready Timeout 81.92 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_122880_MU</td>
+                <td>27</td>
+                <td><p>Receiver Not Ready Timeout 122.88 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_163840_MU</td>
+                <td>28</td>
+                <td><p>Receiver Not Ready Timeout 163.84 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_245760_MU</td>
+                <td>29</td>
+                <td><p>Receiver Not Ready Timeout 245.76 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_327680_MU</td>
+                <td>30</td>
+                <td><p>Receiver Not Ready Timeout 327.68 milliseconds delay</p></td>
+              </tr>
+            
+              <tr>
+                <td>TIMEOUT_491520_MU</td>
+                <td>31</td>
+                <td><p>Receiver Not Ready Timeout 491.52 milliseconds delay</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="common.SpeedMode">SpeedMode</h3>
+        <p>Speed, modulation and FEC mode</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>Speed mode not specified</p></td>
+              </tr>
+            
+              <tr>
+                <td>MODE_100GE_NRZ_RS_FEC</td>
+                <td>9</td>
+                <td><p>100GE port speed with NRZ modulation and RS FEC</p></td>
+              </tr>
+            
+              <tr>
+                <td>MODE_100GE_NRZ_NO_FEC</td>
+                <td>10</td>
+                <td><p>100GE port speed with NRZ modulation and no FEC</p></td>
+              </tr>
+            
+              <tr>
+                <td>MODE_100GE_PAM4_53G_KP4_FEC</td>
+                <td>8</td>
+                <td><p>100GE port speed with 53G PAM4 modulation and KP4 FEC</p></td>
+              </tr>
+            
+              <tr>
+                <td>MODE_100GE_PAM4_106G_RS_FEC</td>
+                <td>7</td>
+                <td><p>100GE port speed with 106G PAM4 modulation and RS FEC</p></td>
+              </tr>
+            
+              <tr>
+                <td>MODE_100GE_PAM4_106G_KP4_FEC</td>
+                <td>6</td>
+                <td><p>100GE port speed with 106G PAM4 modulation and KP4 FEC</p></td>
+              </tr>
+            
+              <tr>
+                <td>MODE_200GE_PAM4_53G_KP4_FEC</td>
+                <td>5</td>
+                <td><p>200GE port speed with 53G PAM4 modulation and KP4 FEC</p></td>
+              </tr>
+            
+              <tr>
+                <td>MODE_200GE_PAM4_106G_KP4_FEC</td>
+                <td>4</td>
+                <td><p>200GE port speed with 106G PAM4 modulation and KP4 FEC</p></td>
+              </tr>
+            
+              <tr>
+                <td>MODE_400GE_PAM4_53G_KP4_FEC</td>
+                <td>3</td>
+                <td><p>400GE port speed with 53G PAM4 lanes and KP4 FEC</p></td>
+              </tr>
+            
+              <tr>
+                <td>MODE_400GE_PAM4_106G_KP4_FEC</td>
+                <td>2</td>
+                <td><p>400GE port speed with 106G PAM4 lanes and KP4 FEC</p></td>
+              </tr>
+            
+              <tr>
+                <td>MODE_800GE_PAM4_106G_KP4_FEC</td>
+                <td>1</td>
+                <td><p>800GE port speed with 106G PAM4 lanes and KP4 FEC</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="common.SpeedType">SpeedType</h3>
+        <p>Network interface speed types</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>SPEED_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>Speed type not specified</p></td>
+              </tr>
+            
+              <tr>
+                <td>SPEED_100G</td>
+                <td>1</td>
+                <td><p>100 Gigabit Ethernet</p></td>
+              </tr>
+            
+              <tr>
+                <td>SPEED_200G</td>
+                <td>2</td>
+                <td><p>200 Gigabit Ethernet</p></td>
+              </tr>
+            
+              <tr>
+                <td>SPEED_400G</td>
+                <td>3</td>
+                <td><p>400 Gigabit Ethernet</p></td>
+              </tr>
+            
+              <tr>
+                <td>SPEED_800G</td>
+                <td>4</td>
+                <td><p>800 Gigabit Ethernet</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+
+      
+
+      
+    
+      
+      <div class="file-heading">
+        <h2 id="app_common.proto">app_common.proto</h2><a href="#title">Top</a>
+      </div>
+      <p>app_common.proto</p><p>Common data types and artifacts produced during trial execution</p><p>Must immediately follow header comments (no blank lines)</p>
+
+      
+        <h3 id="app_common.SummaryTable">SummaryTable</h3>
+        <p>Summary table (nccl-like), available after a trial has finished running</p><p>Uses schema since this table will be included in TrialReport for immediate</p><p>access in addition to being available in storage as a feather file.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>summary_rows</td>
+                  <td><a href="#table.TableRow">table.TableRow</a></td>
+                  <td>repeated</td>
+                  <td><p>Rows of summary data, one per collective operation </p></td>
+                </tr>
+              
+                <tr>
+                  <td>summary_schema</td>
+                  <td><a href="#table.TableSchema">table.TableSchema</a></td>
+                  <td></td>
+                  <td><p>Schema defining columns in the summary table </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="app_common.TrialArtifacts">TrialArtifacts</h3>
+        <p>List of artifacts (absolute file paths) produced by a single trial run</p><p>and saved to persistent storage.</p><p>Table schema for each data table.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>configuration_files</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Paths to configuration files used in the trial </p></td>
+                </tr>
+              
+                <tr>
+                  <td>summary_data_files</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Paths to summary data files </p></td>
+                </tr>
+              
+                <tr>
+                  <td>port_metrics_data_files</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Paths to port-level metrics files </p></td>
+                </tr>
+              
+                <tr>
+                  <td>fabric_metrics_data_files</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Paths to fabric-level metrics files </p></td>
+                </tr>
+              
+                <tr>
+                  <td>pcap_files</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Paths to packet capture files </p></td>
+                </tr>
+              
+                <tr>
+                  <td>custom_files</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Paths to custom user-generated files </p></td>
+                </tr>
+              
+                <tr>
+                  <td>error_msg_files</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Paths to error message log files </p></td>
+                </tr>
+              
+                <tr>
+                  <td>flow_metrics_data_files</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Paths to flow-level metrics files </p></td>
+                </tr>
+              
+                <tr>
+                  <td>data_chunk_data_files</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Paths to data chunk metrics files </p></td>
+                </tr>
+              
+                <tr>
+                  <td>impairment_metrics_data_files</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Paths to impairment metrics files </p></td>
+                </tr>
+              
+                <tr>
+                  <td>qp_metrics_data_files</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Paths to queue pair metrics files </p></td>
+                </tr>
+              
+                <tr>
+                  <td>datasize_breakdown_metrics_data_files</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Paths to data size breakdown metrics files </p></td>
+                </tr>
+              
+                <tr>
+                  <td>iteration_metrics_data_files</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Paths to per-iteration metrics files </p></td>
+                </tr>
+              
+                <tr>
+                  <td>emulation_summary_metrics_data_files</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Paths to emulation summary metrics files </p></td>
+                </tr>
+              
+                <tr>
+                  <td>workload_details_data_files</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Paths to workload detail files </p></td>
+                </tr>
+              
+                <tr>
+                  <td>packet_drop_metrics_data_files</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Paths to packet drop metrics files </p></td>
+                </tr>
+              
+                <tr>
+                  <td>packet_reorder_metrics_data_files</td>
+                  <td><a href="#string">string</a></td>
+                  <td>repeated</td>
+                  <td><p>Paths to packet reorder metrics files </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+        <h3 id="app_common.ArtifactType">ArtifactType</h3>
+        <p>Types of artifacts produced during trial execution.</p><p>Classifies output files by their content and purpose.</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>ART_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>Artifact type not specified</p></td>
+              </tr>
+            
+              <tr>
+                <td>ART_CONFIGURATION</td>
+                <td>1</td>
+                <td><p>Configuration files used for the trial</p></td>
+              </tr>
+            
+              <tr>
+                <td>ART_SUMMARY_DATA</td>
+                <td>2</td>
+                <td><p>High-level summary data and statistics</p></td>
+              </tr>
+            
+              <tr>
+                <td>ART_PORT_METRICS_DATA</td>
+                <td>5</td>
+                <td><p>Per-port performance metrics</p></td>
+              </tr>
+            
+              <tr>
+                <td>ART_FABRIC_METRICS_DATA</td>
+                <td>6</td>
+                <td><p>Fabric-wide performance metrics</p></td>
+              </tr>
+            
+              <tr>
+                <td>ART_PCAP</td>
+                <td>7</td>
+                <td><p>Packet capture files (pcap format)</p></td>
+              </tr>
+            
+              <tr>
+                <td>ART_CUSTOM</td>
+                <td>8</td>
+                <td><p>User-defined custom artifact files</p></td>
+              </tr>
+            
+              <tr>
+                <td>ART_ERROR_MSG</td>
+                <td>9</td>
+                <td><p>Error messages and diagnostics</p></td>
+              </tr>
+            
+              <tr>
+                <td>ART_DATA_CHUNK_DATA</td>
+                <td>10</td>
+                <td><p>Data chunk transfer metrics</p></td>
+              </tr>
+            
+              <tr>
+                <td>ART_FLOW_METRICS_DATA</td>
+                <td>11</td>
+                <td><p>Per-flow communication metrics</p></td>
+              </tr>
+            
+              <tr>
+                <td>ART_IMPAIRMENT_METRICS_DATA</td>
+                <td>12</td>
+                <td><p>Network impairment application metrics</p></td>
+              </tr>
+            
+              <tr>
+                <td>ART_QP_METRICS_DATA</td>
+                <td>13</td>
+                <td><p>Queue pair (QP) level metrics</p></td>
+              </tr>
+            
+              <tr>
+                <td>ART_DATASIZE_BREAKDOWN_METRICS_DATA</td>
+                <td>14</td>
+                <td><p>Message size distribution breakdown</p></td>
+              </tr>
+            
+              <tr>
+                <td>ART_ITERATION_METRICS_DATA</td>
+                <td>15</td>
+                <td><p>Per-iteration performance metrics</p></td>
+              </tr>
+            
+              <tr>
+                <td>ART_EMULATION_SUMMARY_METRICS_DATA</td>
+                <td>16</td>
+                <td><p>Overall emulation summary statistics</p></td>
+              </tr>
+            
+              <tr>
+                <td>ART_WORKLOAD_DETAILS_DATA</td>
+                <td>17</td>
+                <td><p>Detailed workload execution information</p></td>
+              </tr>
+            
+              <tr>
+                <td>ART_PACKET_DROP_METRICS_DATA</td>
+                <td>18</td>
+                <td><p>Packet drop impairment metrics</p></td>
+              </tr>
+            
+              <tr>
+                <td>ART_PACKET_REORDER_METRICS_DATA</td>
+                <td>19</td>
+                <td><p>Packet reorder impairment metrics</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+
+      
+
+      
+    
+      
+      <div class="file-heading">
+        <h2 id="dse_infra.proto">dse_infra.proto</h2><a href="#title">Top</a>
+      </div>
+      <p>dse_infra.proto</p><p>data models for dse infrastructures to be used by applications</p><p>Must immediately follow header comments (no blank lines)</p>
+
+      
+        <h3 id="dse_infra.BlackboxFabric">BlackboxFabric</h3>
+        <p>Describes a fabric where the internal topology is not modeled.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>The name identifier for this blackbox fabric instance.
+fabric name </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="dse_infra.ClosFabric">ClosFabric</h3>
+        <p>BEGIN PRIVATE</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>host_count</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>The number of hosts in the fabric. This value is used to determine the
+number of racks and switches needed in the fabric based on the tier
+configurations. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>host_nic_speed</td>
+                  <td><a href="#dse_infra.InfraBandwidth">InfraBandwidth</a></td>
+                  <td></td>
+                  <td><p>Gap in field numbers lets us add this later without breaking compatibility.
+uint32 host_nic_radix = 6; </p></td>
+                </tr>
+              
+                <tr>
+                  <td>host_max_ports_up_to_peer</td>
+                  <td><a href="#dse_infra.MaxPortsUpToPeer">MaxPortsUpToPeer</a></td>
+                  <td></td>
+                  <td><p>The maximum number of ports from each host up to its peer switch. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>host_wiring_schema</td>
+                  <td><a href="#dse_infra.HostWiringSchema">HostWiringSchema</a></td>
+                  <td></td>
+                  <td><p>The schema for the host wiring. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>spine_wiring_schema</td>
+                  <td><a href="#dse_infra.SpineWiringSchema">SpineWiringSchema</a></td>
+                  <td></td>
+                  <td><p>The schema for the spine wiring. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>tier_configs</td>
+                  <td><a href="#dse_infra.TierConfig">TierConfig</a></td>
+                  <td>repeated</td>
+                  <td><p>The configurations for each tier in the fabric. The first element in the
+list corresponds to the leaf tier, the second to the tier above it, and so
+on. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="dse_infra.Fabric">Fabric</h3>
+        <p>Describes the overall fabric topology.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>blackbox</td>
+                  <td><a href="#dse_infra.BlackboxFabric">BlackboxFabric</a></td>
+                  <td></td>
+                  <td><p>non-detailed generic fabric (a blackbox) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>clos</td>
+                  <td><a href="#dse_infra.ClosFabric">ClosFabric</a></td>
+                  <td></td>
+                  <td><p>Multi-stage Clos fabric </p></td>
+                </tr>
+              
+                <tr>
+                  <td>rackplane</td>
+                  <td><a href="#dse_infra.RackPlaneFabric">RackPlaneFabric</a></td>
+                  <td></td>
+                  <td><p>BEGIN PRIVATE
+EXPERIMENTAL: network fabric featuring multiple planes within a rack </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="dse_infra.GenericHost">GenericHost</h3>
+        <p>contains the input parameters for the generic host builder</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>The name of the generic host. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>npu_count</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>The number of Neural Processing Units (NPUs) in the host.
+N.B. generic hosts have a 1:1 ratio of nics and gpus </p></td>
+                </tr>
+              
+                <tr>
+                  <td>custom_bandwidth_gbps</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>The custom bandwidth for the generic host in Gbps. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>nvlink_version_bandwidth</td>
+                  <td><a href="#dse_infra.NVLinkVersionBandwidth">NVLinkVersionBandwidth</a></td>
+                  <td></td>
+                  <td><p>BEGIN PRIVATE
+The bandwidth of NVLink by version. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="dse_infra.Host">Host</h3>
+        <p>Host message is a high level specification of a low level device </p><p>The Trial object returned by CreateTrial() includes a representation of each individual device.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>count</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>The number of hosts in the fabric. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>zionex</td>
+                  <td><a href="#dse_infra.ZionexHost">ZionexHost</a></td>
+                  <td></td>
+                  <td><p>Zionex host type. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>generic</td>
+                  <td><a href="#dse_infra.GenericHost">GenericHost</a></td>
+                  <td></td>
+                  <td><p>Generic host type. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>rackplane</td>
+                  <td><a href="#dse_infra.RackPlaneHost">RackPlaneHost</a></td>
+                  <td></td>
+                  <td><p>EXPERIMENTAL </p></td>
+                </tr>
+              
+                <tr>
+                  <td>use_npu_interconnect</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>END PRIVATE
+Whether to use NPU interconnect for the host. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="dse_infra.InfraBandwidth">InfraBandwidth</h3>
+        <p>BEGIN PRIVATE</p><p>The bandwidth specification for infrastructure components.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>custom_gbps</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>A custom bandwidth for the infrastructure in Gbps. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>fabric_speed</td>
+                  <td><a href="#common.SpeedType">common.SpeedType</a></td>
+                  <td></td>
+                  <td><p>The speed of the infrastructure fabric. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="dse_infra.Infrastructure">Infrastructure</h3>
+        <p>infrastructure configuration comprising hosts and the network fabric</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>host</td>
+                  <td><a href="#dse_infra.Host">Host</a></td>
+                  <td></td>
+                  <td><p>The type of host used in the infrastructure. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>fabric</td>
+                  <td><a href="#dse_infra.Fabric">Fabric</a></td>
+                  <td>optional</td>
+                  <td><p>Specifies thes fabric topology used in the infrastructure. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="dse_infra.MaxPortsDownFromDevice">MaxPortsDownFromDevice</h3>
+        <p>BEGIN PRIVATE</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>port_count</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>The maximum number of ports under a device. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>use_half</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>Whether to use half the maximum ports. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="dse_infra.MaxPortsUpToPeer">MaxPortsUpToPeer</h3>
+        <p>BEGIN PRIVATE</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>port_count</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>The maximum number of ports from each host up to its peer switch. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>use_max</td>
+                  <td><a href="#bool">bool</a></td>
+                  <td></td>
+                  <td><p>Whether to use the maximum number of ports. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="dse_infra.OversubscriptionRatio">OversubscriptionRatio</h3>
+        <p>BEGIN PRIVATE</p><p>Represents an oversubscription ratio with the form <downlink_factor>:<uplink_factor></p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>downlink_factor</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>The oversubscription ratio for downlink traffic. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>uplink_factor</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>The oversubscription ratio for uplink traffic. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="dse_infra.RackPlaneFabric">RackPlaneFabric</h3>
+        <p>EXPERIMENTAL: A network fabric featuring multiple planes within a rack</p><p>Using a RackPlaneFabric requires the use of a RackPlaneHost.</p><p>The number of rack-switches for intra-rack communication is driven by RackPlaneHost.scale_up_nic_count.</p><p>The number of scale-out switches for inter-rack communication is driven by </p><p>rack_count and RackPlaneHost.scale_out_nic_count and hosts_per_rack.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>rack_count</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td>optional</td>
+                  <td><p>The number of racks in the fabric. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>hosts_per_rack</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td>optional</td>
+                  <td><p>The number of hosts per rack. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>scale_out_switch_speed</td>
+                  <td><a href="#common.SpeedType">common.SpeedType</a></td>
+                  <td></td>
+                  <td><p>Ethernet speed for inter-rack communication via scale-out switches. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>scale_up_switch_speed</td>
+                  <td><a href="#common.SpeedType">common.SpeedType</a></td>
+                  <td></td>
+                  <td><p>Ethernet speed for intra-rack communication on the scale-up network. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="dse_infra.RackPlaneHost">RackPlaneHost</h3>
+        <p>Host type intended to be used in conjunction with RackPlaneFabric.</p><p>It connects to each of the RackPlaneFabric planes with a dedicated scale up NIC.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>npu_count</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td>optional</td>
+                  <td><p>The number of NPUs in the host. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>scale_up_nic_count</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td>optional</td>
+                  <td><p>The number of NICs for scale-up traffic. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>scale_out_nic_count</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td>optional</td>
+                  <td><p>The number of NICs for scale-out traffic. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>The name identifier for this RackPlane host instance. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="dse_infra.TierConfig">TierConfig</h3>
+        <p>BEGIN PRIVATE</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>switch_radix</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>The radix of the switch in the fabric. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>oversubscription_ratio</td>
+                  <td><a href="#dse_infra.OversubscriptionRatio">OversubscriptionRatio</a></td>
+                  <td></td>
+                  <td><p>The oversubscription ratio for this tier, expressed as
+downlink_factor:uplink_factor. This determines the ratio of downward-facing
+to upward-facing port bandwidth. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>port_speed</td>
+                  <td><a href="#dse_infra.InfraBandwidth">InfraBandwidth</a></td>
+                  <td></td>
+                  <td><p>The port speed (bandwidth) for all switch ports on this tier. Can be
+specified as a custom value in Gbps or as a standard fabric speed. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>max_ports_up_to_peer</td>
+                  <td><a href="#dse_infra.MaxPortsUpToPeer">MaxPortsUpToPeer</a></td>
+                  <td></td>
+                  <td><p>The maximum number of ports that can connect from a switch on this tier to
+a single switch on the next higher tier. Controls link aggregation between
+tiers. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>max_ports_down_from_device</td>
+                  <td><a href="#dse_infra.MaxPortsDownFromDevice">MaxPortsDownFromDevice</a></td>
+                  <td></td>
+                  <td><p>The maximum number of ports on each switch that can connect downward to the
+next lower tier. Typically uses half the switch radix by default. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="dse_infra.ZionexHost">ZionexHost</h3>
+        <p>BEGIN PRIVATE</p><p>zionex host builder takes no inputs</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>name</td>
+                  <td><a href="#string">string</a></td>
+                  <td>optional</td>
+                  <td><p>The name identifier for this Zionex host instance. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+        <h3 id="dse_infra.HostWiringSchema">HostWiringSchema</h3>
+        <p>BEGIN PRIVATE</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>HOST_WIRING_SCHEMA_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>Undeclared wiring schema.</p></td>
+              </tr>
+            
+              <tr>
+                <td>FAIR_DISTRIBUTION</td>
+                <td>1</td>
+                <td><p>Fair distribution wiring schema.
+Connect each host to a different rack switch in round-robin fashion until all hosts have been connected.</p></td>
+              </tr>
+            
+              <tr>
+                <td>LEFT_TO_RIGHT</td>
+                <td>2</td>
+                <td><p>Left to right wiring schema.
+Connect hosts to rack switches from left to right. Move to next switch only after a switch&#39;s capacity has been filled.</p></td>
+              </tr>
+            
+              <tr>
+                <td>RAIL_OPTIMIZED</td>
+                <td>3</td>
+                <td><p>Rail optimized wiring schema.
+The nth NICs of all hosts are connected to the same switches.</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="dse_infra.NVLinkVersionBandwidth">NVLinkVersionBandwidth</h3>
+        <p>BEGIN PRIVATE</p><p>The bandwidth of NVLink by version.</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>NVLINK_VERSION_BANDWIDTH_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>The bandwidth for the specificed NVLink version is not specified.</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+        <h3 id="dse_infra.SpineWiringSchema">SpineWiringSchema</h3>
+        <p>BEGIN PRIVATE</p>
+        <table class="enum-table">
+          <thead>
+            <tr><td>Name</td><td>Number</td><td>Description</td></tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>SPINE_WIRING_SCHEMA_UNSPECIFIED</td>
+                <td>0</td>
+                <td><p>The schema for the spine wiring is not specified.</p></td>
+              </tr>
+            
+              <tr>
+                <td>FULLY_CONNECTED</td>
+                <td>1</td>
+                <td><p>The spines are fuly connected.
+Every spine switch is connected to every switch in the previous tier.</p></td>
+              </tr>
+            
+              <tr>
+                <td>SPINE_SETS</td>
+                <td>2</td>
+                <td><p>The spines are partially connected in sets as determined by the number of
+hosts, tiers, and switch radix constraints.
+The spine layer consists of of one or more spine sets such that every switch within a spine set is connected to the nth switch of every connectivity group in the previous tier. Example of this wiring scheme can be seen in this article: https://packetpushers.net/blog/demystifying-dcn-topologies-clos-fat-trees-part2/</p></td>
+              </tr>
+            
+          </tbody>
+        </table>
+      
+
+      
+
+      
+    
+      
+      <div class="file-heading">
+        <h2 id="kccb.proto">kccb.proto</h2><a href="#title">Top</a>
+      </div>
+      <p>kccb.proto</p><p>Data models and apis for describing a Keysight Collective Communication Benchmark</p><p>Must immediately follow header comments (no blank lines)</p>
+
+      
+        <h3 id="kccb.Benchmark">Benchmark</h3>
+        <p>Benchmark message is a high level abstraction of a Chakra workload</p><p>The message MUST be converted into a list of Chakra et_def.proto Node messages</p><p>and the dse.Experiment.workload field should be populated with the</p><p>converted list</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>collective_algorithm</td>
+                  <td><a href="#common.Algorithm">common.Algorithm</a></td>
+                  <td></td>
+                  <td><p>communication collective algorithm </p></td>
+                </tr>
+              
+                <tr>
+                  <td>datasize</td>
+                  <td><a href="#kccb.Datasize">Datasize</a></td>
+                  <td></td>
+                  <td><p>A data size iterator with start, step, and end values </p></td>
+                </tr>
+              
+                <tr>
+                  <td>datasize_list</td>
+                  <td><a href="#kccb.DatasizeList">DatasizeList</a></td>
+                  <td></td>
+                  <td><p>A list of data size definitions </p></td>
+                </tr>
+              
+                <tr>
+                  <td>iterations</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>Number of benchmark runs per data size </p></td>
+                </tr>
+              
+                <tr>
+                  <td>channels</td>
+                  <td><a href="#channels.ChannelsTopology">channels.ChannelsTopology</a></td>
+                  <td></td>
+                  <td><p>The channels topology configuration specifying how ranks are distributed and connected. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>iteration_append_delay</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td>optional</td>
+                  <td><p>The delay (in ms) between repeated executions of the benchmark. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="kccb.Config">Config</h3>
+        <p>High-level KCCB spec for a trial.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>benchmark</td>
+                  <td><a href="#kccb.Benchmark">Benchmark</a></td>
+                  <td></td>
+                  <td><p>The benchmark configuration defining the collective communication test. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="kccb.Datasize">Datasize</h3>
+        <p>Datasize message is a container for specifying the data sizes for each</p><p>benchmark collective run</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>start</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>The initial data size of a benchmark collective operation. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>step</td>
+                  <td><a href="#uint32">uint32</a></td>
+                  <td></td>
+                  <td><p>The amount to increment the data size between iterations </p></td>
+                </tr>
+              
+                <tr>
+                  <td>end</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td></td>
+                  <td><p>maximum data size after which the benchmark completes </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="kccb.DatasizeList">DatasizeList</h3>
+        <p>DatasizeList allows for specifying a custom list of data sizes</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>size_bytes</td>
+                  <td><a href="#uint64">uint64</a></td>
+                  <td>repeated</td>
+                  <td><p>the size of data in bytes </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+    
+      
+      <div class="file-heading">
+        <h2 id="bind.proto">bind.proto</h2><a href="#title">Top</a>
+      </div>
+      <p>binding.proto</p><p>Protocol Buffers definitions for binding logical infrastructure elements to ranks, nics, physical resources.</p><p>Must immediately follow header comments (no blank lines)</p>
+
+      
+        <h3 id="bind.Binding">Binding</h3>
+        <p>Binds various settings to logical infrastructure elements.</p><p>The type of bound information depends on the type of binding.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>custom_binding</td>
+                  <td><a href="#bind.CustomBinding">CustomBinding</a></td>
+                  <td></td>
+                  <td><p>Custom binding configuration that maps ranks to NPUs, configures NIC
+settings, and assigns physical test resources. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>infrastructure_profile</td>
+                  <td><a href="#profiles.InfraProfile">profiles.InfraProfile</a></td>
+                  <td></td>
+                  <td><p>the Binding keeps a copy of the infrastructure profile
+so that Trials can be re-run with the original versions of (potentially modified) profiles.InfraProfile </p></td>
+                </tr>
+              
+                <tr>
+                  <td>infrastructure</td>
+                  <td><a href="#keysight_chakra.infra.Infrastructure">keysight_chakra.infra.Infrastructure</a></td>
+                  <td></td>
+                  <td><p>low-level chakra infrastructure matching infrastructure_profile </p></td>
+                </tr>
+              
+                <tr>
+                  <td>infra_annotations</td>
+                  <td><a href="#keysight_chakra.infra.Annotation">keysight_chakra.infra.Annotation</a></td>
+                  <td>repeated</td>
+                  <td><p>Annotations for low-level chakra infrastructure. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>platform_regions</td>
+                  <td><a href="#bind.PlatformRegion">PlatformRegion</a></td>
+                  <td>repeated</td>
+                  <td><p>Assigns platforms to different regions of the infrastructure. Should be populated by the server and be a copy of the platform_regions sent in CreateBindingRequest. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="bind.CustomBinding">CustomBinding</h3>
+        <p>Binds:</p><p>a) Ranks to Logical NPUs</p><p>b) NIC settings to Logical NICs</p><p>c) assigned test resources</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>rank_bindings</td>
+                  <td><a href="#bind.RankBinding">RankBinding</a></td>
+                  <td>repeated</td>
+                  <td><p>List of bindings that map each rank to a specific logical NPU and its
+available NICs in the infrastructure. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>nic_bindings</td>
+                  <td><a href="#bind.NicBinding">NicBinding</a></td>
+                  <td>repeated</td>
+                  <td><p>List of NIC configuration bindings that specify settings and associated
+physical bindings for each logical NIC. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>physical_bindings</td>
+                  <td><a href="#bind.PhysicalBinding">PhysicalBinding</a></td>
+                  <td>repeated</td>
+                  <td><p>List of bindings that associate logical infrastructure elements with
+physical test resources such as chassis or servers. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="bind.InfraRef">InfraRef</h3>
+        <p>Reference to a logical infrastructure element</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>device_instance_name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>name of the logical infrastructure device (e.g. the value dse_infra.GenericHost.name was set to) </p></td>
+                </tr>
+              
+                <tr>
+                  <td>device_index</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>0-based device index </p></td>
+                </tr>
+              
+                <tr>
+                  <td>component_name</td>
+                  <td><a href="#string">string</a></td>
+                  <td></td>
+                  <td><p>name of the logical infrastructure component </p></td>
+                </tr>
+              
+                <tr>
+                  <td>component_index</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>0-based component index </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="bind.InfraRegion">InfraRegion</h3>
+        <p>Defines a region within the infrastructure by specifying boundary components.</p><p>Used to group infrastructure elements for platform assignment or other</p><p>purposes.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>boundary_refs</td>
+                  <td><a href="#bind.InfraRef">InfraRef</a></td>
+                  <td>repeated</td>
+                  <td><p>These components mark the boundary of a region within the infrastructure. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="bind.NicBinding">NicBinding</h3>
+        <p>Logical NIC Settings</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>infra_ref</td>
+                  <td><a href="#bind.InfraRef">InfraRef</a></td>
+                  <td></td>
+                  <td><p>ref to a NIC defined in the chakra infrastructure </p></td>
+                </tr>
+              
+                <tr>
+                  <td>nic_settings</td>
+                  <td><a href="#common.NicSettings">common.NicSettings</a></td>
+                  <td></td>
+                  <td><p>auto-populated, can be overriden by user </p></td>
+                </tr>
+              
+                <tr>
+                  <td>associated_physical_bindings</td>
+                  <td><a href="#bind.InfraRef">InfraRef</a></td>
+                  <td>repeated</td>
+                  <td><p>flows from this nic may be generated by test ports from any of these associated physical bindings </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="bind.PhysicalBinding">PhysicalBinding</h3>
+        <p>Binds a logical infrastructure element to a physical test resource,</p><p>specifying the platform type, physical location, and layer 1 settings.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>infra_ref</td>
+                  <td><a href="#bind.InfraRef">InfraRef</a></td>
+                  <td></td>
+                  <td><p>reference to the logical infrastructure element that the physical resource represents </p></td>
+                </tr>
+              
+                <tr>
+                  <td>platform</td>
+                  <td><a href="#common.PlatformType">common.PlatformType</a></td>
+                  <td></td>
+                  <td><p>The platform type for this physical binding (e.g., hardware chassis or software server). </p></td>
+                </tr>
+              
+                <tr>
+                  <td>chassis_location</td>
+                  <td><a href="#common.ChassisInfo">common.ChassisInfo</a></td>
+                  <td></td>
+                  <td><p>with Keysight Hardware platforms </p></td>
+                </tr>
+              
+                <tr>
+                  <td>server_location</td>
+                  <td><a href="#common.ServerInfo">common.ServerInfo</a></td>
+                  <td></td>
+                  <td><p>with NCCL &#43; Keysight Software platforms </p></td>
+                </tr>
+              
+                <tr>
+                  <td>layer1</td>
+                  <td><a href="#common.Layer1">common.Layer1</a></td>
+                  <td></td>
+                  <td><p>Layer 1 physical settings such as link speed, duplex mode, and physical layer parameters. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>capture</td>
+                  <td><a href="#common.PacketCapture">common.PacketCapture</a></td>
+                  <td>optional</td>
+                  <td><p>BEGIN PRIVATE
+packet capture settings
+
+END PRIVATE </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="bind.PlatformRegion">PlatformRegion</h3>
+        <p>Assigns a platform to a region in the infrastructure.</p><p>Currently for internal use only.</p><p>TODO: Links to sample scripts demonstrating usage.</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>region</td>
+                  <td><a href="#bind.InfraRegion">InfraRegion</a></td>
+                  <td></td>
+                  <td><p>The infrastructure region to which a platform will be assigned. Defines the
+boundary components that comprise the region. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>platform</td>
+                  <td><a href="#common.PlatformType">common.PlatformType</a></td>
+                  <td>optional</td>
+                  <td><p>The platform type to assign to this infrastructure region for testing. </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+        <h3 id="bind.RankBinding">RankBinding</h3>
+        <p>Assign Ranks to Logical NPUs</p>
+
+        
+          <table class="field-table">
+            <thead>
+              <tr><td>Field</td><td>Type</td><td>Label</td><td>Description</td></tr>
+            </thead>
+            <tbody>
+              
+                <tr>
+                  <td>infra_ref</td>
+                  <td><a href="#bind.InfraRef">InfraRef</a></td>
+                  <td></td>
+                  <td><p>ref to NPU used by this rank </p></td>
+                </tr>
+              
+                <tr>
+                  <td>rank_id</td>
+                  <td><a href="#int32">int32</a></td>
+                  <td></td>
+                  <td><p>The unique identifier for this rank in the distributed workload. Specifies
+which rank is bound to the referenced NPU. </p></td>
+                </tr>
+              
+                <tr>
+                  <td>nic_refs</td>
+                  <td><a href="#bind.InfraRef">InfraRef</a></td>
+                  <td>repeated</td>
+                  <td><p>list of NICs available to NPU (in the same host) </p></td>
+                </tr>
+              
+            </tbody>
+          </table>
+
+          
+
+        
+      
+
+      
+
+      
+
+      
+    
+
+    <h2 id="scalar-value-types">Scalar Value Types</h2>
+    <table class="scalar-value-types-table">
+      <thead>
+        <tr><td>.proto Type</td><td>Notes</td><td>C++</td><td>Java</td><td>Python</td><td>Go</td><td>C#</td><td>PHP</td><td>Ruby</td></tr>
+      </thead>
+      <tbody>
+        
+          <tr id="double">
+            <td>double</td>
+            <td></td>
+            <td>double</td>
+            <td>double</td>
+            <td>float</td>
+            <td>float64</td>
+            <td>double</td>
+            <td>float</td>
+            <td>Float</td>
+          </tr>
+        
+          <tr id="float">
+            <td>float</td>
+            <td></td>
+            <td>float</td>
+            <td>float</td>
+            <td>float</td>
+            <td>float32</td>
+            <td>float</td>
+            <td>float</td>
+            <td>Float</td>
+          </tr>
+        
+          <tr id="int32">
+            <td>int32</td>
+            <td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead.</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>int</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>integer</td>
+            <td>Bignum or Fixnum (as required)</td>
+          </tr>
+        
+          <tr id="int64">
+            <td>int64</td>
+            <td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead.</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>int/long</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>integer/string</td>
+            <td>Bignum</td>
+          </tr>
+        
+          <tr id="uint32">
+            <td>uint32</td>
+            <td>Uses variable-length encoding.</td>
+            <td>uint32</td>
+            <td>int</td>
+            <td>int/long</td>
+            <td>uint32</td>
+            <td>uint</td>
+            <td>integer</td>
+            <td>Bignum or Fixnum (as required)</td>
+          </tr>
+        
+          <tr id="uint64">
+            <td>uint64</td>
+            <td>Uses variable-length encoding.</td>
+            <td>uint64</td>
+            <td>long</td>
+            <td>int/long</td>
+            <td>uint64</td>
+            <td>ulong</td>
+            <td>integer/string</td>
+            <td>Bignum or Fixnum (as required)</td>
+          </tr>
+        
+          <tr id="sint32">
+            <td>sint32</td>
+            <td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s.</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>int</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>integer</td>
+            <td>Bignum or Fixnum (as required)</td>
+          </tr>
+        
+          <tr id="sint64">
+            <td>sint64</td>
+            <td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s.</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>int/long</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>integer/string</td>
+            <td>Bignum</td>
+          </tr>
+        
+          <tr id="fixed32">
+            <td>fixed32</td>
+            <td>Always four bytes. More efficient than uint32 if values are often greater than 2^28.</td>
+            <td>uint32</td>
+            <td>int</td>
+            <td>int</td>
+            <td>uint32</td>
+            <td>uint</td>
+            <td>integer</td>
+            <td>Bignum or Fixnum (as required)</td>
+          </tr>
+        
+          <tr id="fixed64">
+            <td>fixed64</td>
+            <td>Always eight bytes. More efficient than uint64 if values are often greater than 2^56.</td>
+            <td>uint64</td>
+            <td>long</td>
+            <td>int/long</td>
+            <td>uint64</td>
+            <td>ulong</td>
+            <td>integer/string</td>
+            <td>Bignum</td>
+          </tr>
+        
+          <tr id="sfixed32">
+            <td>sfixed32</td>
+            <td>Always four bytes.</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>int</td>
+            <td>int32</td>
+            <td>int</td>
+            <td>integer</td>
+            <td>Bignum or Fixnum (as required)</td>
+          </tr>
+        
+          <tr id="sfixed64">
+            <td>sfixed64</td>
+            <td>Always eight bytes.</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>int/long</td>
+            <td>int64</td>
+            <td>long</td>
+            <td>integer/string</td>
+            <td>Bignum</td>
+          </tr>
+        
+          <tr id="bool">
+            <td>bool</td>
+            <td></td>
+            <td>bool</td>
+            <td>boolean</td>
+            <td>boolean</td>
+            <td>bool</td>
+            <td>bool</td>
+            <td>boolean</td>
+            <td>TrueClass/FalseClass</td>
+          </tr>
+        
+          <tr id="string">
+            <td>string</td>
+            <td>A string must always contain UTF-8 encoded or 7-bit ASCII text.</td>
+            <td>string</td>
+            <td>String</td>
+            <td>str/unicode</td>
+            <td>string</td>
+            <td>string</td>
+            <td>string</td>
+            <td>String (UTF-8)</td>
+          </tr>
+        
+          <tr id="bytes">
+            <td>bytes</td>
+            <td>May contain any arbitrary sequence of bytes.</td>
+            <td>string</td>
+            <td>ByteString</td>
+            <td>str</td>
+            <td>[]byte</td>
+            <td>ByteString</td>
+            <td>string</td>
+            <td>String (ASCII-8BIT)</td>
+          </tr>
+        
+      </tbody>
+    </table>
+  </body>
+</html>
+

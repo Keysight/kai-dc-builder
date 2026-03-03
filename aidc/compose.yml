@@ -1,8 +1,9 @@
-# DSE release 2.0 docker compose file
+# KAI Data Center Builder 2.2
+# Release Date 2026-02-20
+# Docker Compose - Default File
 
 services:
   dse:
-    container_name: ${DSE_DOCKER_NAME}
     image: ${DSE_DOCKER_IMAGE}
     command: --accept_eula --server_name ${SERVER_NAME} --user_name ${USER} --db_name ${DB_NAME} ${DATA_URL} ${LICENSE_SERVERS} ${FEATURES} ${PLUGINS}
     ports:
