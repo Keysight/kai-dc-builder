@@ -1,5 +1,7 @@
 # Migration to Storage v2
 
+> Make sure to follow the [Repository](../../deployment/configure.md#repository) section from the DSE Controller Configuration page. 
+
 Use this procedure to migrate existing trial results from KAI DC Builder version 1.x to version 2.0. It assumes you are using the recommended deployment method with the `${REPODIR}/aidc/.env` configuration file for Docker Compose.
 
 1. Edit the `.env` to make sure the STORAGE variable points to a path to a new storage location. If you're using the standard template for the `env.2.0`, it would look like this:

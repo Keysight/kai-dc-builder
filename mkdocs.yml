@@ -72,10 +72,15 @@ nav:
     - Run with Compose: deployment/compose.md
     - Run with Docker: deployment/docker.md
   - Reference:
+    - Index: reference/index.md
+    - Chunks and Flows: reference/terminology.md
+    - xPU Interconnect: reference/xpu_interconnect.md
+    - AlltoAll PXN: reference/alltoall_pxn.md
     - Storage: reference/storage.md
   - Automation:
     - Overview: devguide/overview.md
     - Client API Reference:
       - 1.0.2: kaidcb/1.0.2/client_api_reference.html
+      - 2.2.5: kaidcb/2.2.5/client_api_reference.html
   - Releases:
     - Versions: kaidcb/versions.md

@@ -1,9 +1,9 @@
-# DSE release 2.0 docker compose file
-# with Jupyter Notebook integration
+# KAI Data Center Builder 2.2
+# Release Date 2026-02-20
+# Docker Compose - Jupyter Notebook
 
 services:
   dse:
-    container_name: ${DSE_DOCKER_NAME}
     image: ${DSE_DOCKER_IMAGE}
     command: --accept_eula --server_name ${SERVER_NAME} --user_name ${USER} --db_name ${DB_NAME} ${DATA_URL} ${LICENSE_SERVERS} ${FEATURES} ${PLUGINS}
     ports:
@@ -13,7 +13,6 @@ services:
     volumes:
         - ${STORAGE}:/var/lib/dse
   jupyter:
-    container_name: ${COMPOSE_PROJECT_NAME}-jupyter
     image: jupyter/base-notebook:latest
     ports:
       - ${JUPYTER}:8888
@@ -25,6 +24,5 @@ services:
     environment:
       - JUPYTER_TOKEN=${JUPYTER_TOKEN:-}
       - VERSION=${VERSION:-}
-      # disable Would you like to receive official Jupyter news?
     # This sets the default kernel for NEW notebooks to "kai-dc-builder"
     command: bash -lc "/usr/local/bin/run-jupyter.sh"
