@@ -50,7 +50,7 @@ pull-dse-tgz: pull-echo pull-dse-tgz-n
 pull-dse-tgz-n:
 	@mkdir -p downloads && cd downloads \
 	&& echo -n "  - DSE TGZ $(DSE_TGZ_FILE) ... " \
-	&& curl -kfsSL -O $(DSE_TGZ_FILE) \
+	&& curl -kfsSL -O $(DSE_TGZ_URL) \
 	&& echo "complete."
 
 pull-dfe-waf: pull-echo pull-dfe-waf-n
